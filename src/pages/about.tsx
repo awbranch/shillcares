@@ -1,14 +1,13 @@
 import type { NextPage } from 'next';
 import Main from 'layouts/Main';
 import Container from 'components/Container';
-
 import Typography from '@mui/material/Typography';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <Main>
       <Container>
-        <Typography variant="h1">Home</Typography>
+        <Typography variant="h1">About</Typography>
         <Typography variant="body1">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
@@ -29,4 +28,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;
