@@ -36,7 +36,7 @@ class MyDocument extends Document {
             content="The mission of the Molly and Ed Shill Cares Foundation is to help all people and animals have a safe place to live and grow. We aim to end the cycle of violence and provide opportunities for success within our communities."
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Georgia:wght@300..500&&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Georgia:wght@300..500&family=Allerta&display=optional"
             rel="stylesheet"
           />
         </Head>

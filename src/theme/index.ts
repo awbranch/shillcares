@@ -13,13 +13,13 @@ const getTheme = (): Theme =>
       typography: {
         fontFamily: '"Georgia", serif',
         subtitle1: {
-          fontFamily: '"Georgia", serif',
+          fontFamily: 'Georgia, serif',
           lineHeight: 1.3,
           fontSize: '1.6rem',
         },
-
         button: {
           textTransform: 'none',
+          fontFamily: '"Allerta", san-serif',
           fontWeight: 'medium' as React.CSSProperties['fontWeight'],
         },
       },

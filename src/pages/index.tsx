@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Container from 'components/Container';
 
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 const Home: NextPage = () => {
@@ -28,10 +29,20 @@ const Home: NextPage = () => {
           sx={{ mt: 4, width: '100%' }}
         />
       </Box>
-      <Typography variant="subtitle1" sx={{ textAlign: 'center', mt: 4 }}>
-        {`We are currently accepting grant applications for ${new Date().getFullYear()}`}
-        .
-      </Typography>
+      <Box sx={{ textAlign: 'center', mt: 4 }}>
+        <Typography variant="subtitle1">
+          {`We are currently accepting grant applications for ${new Date().getFullYear()}`}
+          .
+        </Typography>
+        <Button
+          sx={{ textAlign: 'center', mt: 5 }}
+          variant="contained"
+          color="primary"
+          size="large"
+        >
+          Grant Application
+        </Button>
+      </Box>
     </Container>
   );
 };
