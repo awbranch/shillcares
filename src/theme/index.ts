@@ -11,7 +11,13 @@ const getTheme = (): Theme =>
       palette: mode === 'light' ? light : dark,
       shadows: shadows(mode),
       typography: {
-        fontFamily: '"Lato", sans-serif',
+        fontFamily: '"Georgia", serif',
+        subtitle1: {
+          fontFamily: '"Georgia", serif',
+          lineHeight: 1.3,
+          fontSize: '1.6rem',
+        },
+
         button: {
           textTransform: 'none',
           fontWeight: 'medium' as React.CSSProperties['fontWeight'],

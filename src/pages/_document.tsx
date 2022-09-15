@@ -20,17 +20,23 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta property="og:locale" content="en_US" />
           <meta property="og:type" content="website" />
-          {/*
-          TODO: Set default page meta data
-          <meta name="description" content="" />
+          <meta
+            name="description"
+            content="The mission of the Molly and Ed Shill Cares Foundation is to help all people and animals have a safe place to live and grow. We aim to end the cycle of violence and provide opportunities for success within our communities."
+          />
           <meta name="robots" content="" />
           <meta property="og:image" content="" />
-          <meta property="og:url" content="" />
-          <meta property="og:title" content="" />
-          <meta  property="og:description" content="" />
-          */}
+          <meta property="og:url" content="http://shillcares.org/" />
+          <meta
+            property="og:title"
+            content="Molly and Ed Shill Cares Foundation"
+          />
+          <meta
+            property="og:description"
+            content="The mission of the Molly and Ed Shill Cares Foundation is to help all people and animals have a safe place to live and grow. We aim to end the cycle of violence and provide opportunities for success within our communities."
+          />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Georgia:wght@300..500&&display=optional"
             rel="stylesheet"
           />
         </Head>
