@@ -8,11 +8,11 @@ import Box from '@mui/material/Box';
 const Home: NextPage = () => {
   return (
     <Container>
-      <Box title="Shill Cares Foundation" sx={{ textAlign: 'center' }}>
+      <Box title="Shill Cares Foundation" sx={{ textAlign: 'center', mb: 3 }}>
         <Box
           component={'img'}
           src={'/logo.svg'}
-          width={{ xs: 190, md: 250, textAlign: 'center' }}
+          width={{ xs: 220, sm: 280, textAlign: 'center' }}
         />
       </Box>
       <Typography variant="subtitle1">
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           color="primary"
           size="large"
         >
-          Grant Application
+          Apply for Grant
         </Button>
       </Box>
     </Container>
