@@ -12,6 +12,17 @@ const getTheme = (): Theme =>
       shadows: shadows(mode),
       typography: {
         fontFamily: '"Georgia", serif',
+        h1: {
+          fontSize: '2.5rem',
+          lineHeight: 1.45,
+          fontWeight: 500,
+          marginBottom: '1.5rem',
+        },
+        h2: {
+          fontSize: '1.5rem',
+          fontWeight: 500,
+          marginBottom: '1.5rem',
+        },
         subtitle1: {
           fontFamily: 'Georgia, serif',
           lineHeight: 1.3,

@@ -31,9 +31,11 @@ const Home: NextPage = () => {
           </Typography>
           <Button
             sx={{ textAlign: 'center', mt: 5, fontSize: 16 }}
+            component={'a'}
             variant="contained"
             color="primary"
             size="large"
+            href={'/apply'}
           >
             Apply for Grant
           </Button>

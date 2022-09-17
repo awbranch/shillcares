@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import Simple from 'layouts/simple/Simple';
 import Container from 'components/Container';
-import Typography from '@mui/material/Typography';
+import ApplyForm from 'components/ApplyForm';
 
 const Home: NextPage = () => {
   return (
     <Simple>
       <Container>
-        <Typography variant="subtitle1">Apply</Typography>
+        <ApplyForm />
       </Container>
     </Simple>
   );
