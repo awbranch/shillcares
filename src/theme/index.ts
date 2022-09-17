@@ -19,7 +19,7 @@ const getTheme = (): Theme =>
         },
         button: {
           textTransform: 'none',
-          fontFamily: '"Allerta", san-serif',
+          fontFamily: 'Allerta, sans-serif',
           fontWeight: 'medium' as React.CSSProperties['fontWeight'],
         },
       },
