@@ -9,7 +9,6 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useTheme } from '@mui/material/styles';
 
 const required = 'Required';
 const invalidEmail = 'Please enter a valid email address';
@@ -592,7 +591,7 @@ const ApplyForm = (): JSX.Element => {
             </Grid>
             <Grid item container justifyContent={'left'} xs={12}>
               <Box>
-                <Typography component="p" variant="body2" align="left">
+                <Typography component="p" variant="body2" align="center">
                   By clicking on "submit" you certify to the best of your
                   knowledge, the tax-exempt status of this Organization is still
                   in effect. If a grant is awarded to this Organization, the
@@ -602,7 +601,7 @@ const ApplyForm = (): JSX.Element => {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item container justifyContent={'right'} xs={12}>
+            <Grid item container justifyContent={'center'} xs={12}>
               <Stack direction="row" spacing={2}>
                 <Button
                   sx={{ height: 54, minWidth: 150 }}

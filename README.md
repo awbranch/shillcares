@@ -31,5 +31,6 @@ firebase login
 Then to deploy run the following command
 
 ```bash
+npm run build
 firebase deploy --only hosting
 ```
