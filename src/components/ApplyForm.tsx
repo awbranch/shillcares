@@ -16,7 +16,7 @@ const invalidEmail = 'Please enter a valid email address';
 
 const validationSchema = yup.object({
   organization: yup.string().trim().required(required),
-  websits: yup.string().trim(),
+  website: yup.string().trim(),
   founded: yup
     .string()
     .trim()
@@ -59,26 +59,54 @@ const ApplyForm = (): JSX.Element => {
     city: '',
     state: '',
     zip: '',
-
     directorName: '',
     directorEmail: '',
     directorPhone: '',
-
     contactName: '',
     contactTitle: '',
     contactEmail: '',
     contactPhone: '',
-
     projectName: '',
+    projectGoals: '',
     projectRequestedAmount: '',
     projectTotalCost: '',
     projectDates: '',
     projectArea: '',
-    projectGoals: '',
   };
 
-  const onSubmit = (values) => {
-    return values;
+  // const testValues = {
+  //   organization: 'organization',
+  //   website: 'https://www.organization.org',
+  //   founded: '1999',
+  //   budget: '2,000,000',
+  //   address1: '123 Main Street',
+  //   address2: '',
+  //   city: 'Anytown',
+  //   state: 'NY',
+  //   zip: '12345',
+  //   directorName: 'Jane Doe',
+  //   directorEmail: 'jane.doe@organization.org',
+  //   directorPhone: '(555) 555-5555',
+  //   contactName: 'John Doe',
+  //   contactTitle: 'CTO',
+  //   contactEmail: 'john.doe@organization.org',
+  //   contactPhone: '(444) 444-4444',
+  //   projectName: 'Dog Spa',
+  //   projectGoals: 'To make a spa for dogs',
+  //   projectRequestedAmount: '$2,000',
+  //   projectTotalCost: '$2,000',
+  //   projectDates: '10/1/2022',
+  //   projectArea: 'Monroe County',
+  // };
+
+  const onSubmit = async (values) => {
+    let res = await fetch('/api/apply', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values),
+    });
+    let data = await res.json();
+    console.log(JSON.stringify(data));
   };
 
   const formik = useFormik({
@@ -553,18 +581,17 @@ const ApplyForm = (): JSX.Element => {
                 variant="outlined"
                 color="primary"
                 size="medium"
-                name="projectTotalCost"
+                name="projectDates"
                 fullWidth
-                value={formik.values.projectTotalCost}
+                value={formik.values.projectDates}
                 onChange={formik.handleChange}
                 error={
-                  formik.touched.projectTotalCost &&
-                  Boolean(formik.errors.projectTotalCost)
+                  formik.touched.projectDates &&
+                  Boolean(formik.errors.projectDates)
                 }
                 // @ts-ignore
                 helperText={
-                  formik.touched.projectTotalCost &&
-                  formik.errors.projectTotalCost
+                  formik.touched.projectDates && formik.errors.projectDates
                 }
               />
             </Grid>
