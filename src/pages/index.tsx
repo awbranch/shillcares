@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import NextLink from 'next/link';
 import Simple from 'layouts/simple/Simple';
 import Container from 'components/Container';
 
@@ -29,16 +30,17 @@ const Home: NextPage = () => {
             {`We are currently accepting grant applications for ${new Date().getFullYear()}`}
             .
           </Typography>
-          <Button
-            sx={{ textAlign: 'center', mt: 5, fontSize: 16 }}
-            component={'a'}
-            variant="contained"
-            color="primary"
-            size="large"
-            href={'/apply'}
-          >
-            Apply for Grant
-          </Button>
+          <NextLink href="/apply" passHref>
+            <Button
+              sx={{ textAlign: 'center', mt: 5, fontSize: 16 }}
+              component={'a'}
+              variant="contained"
+              color="primary"
+              size="large"
+            >
+              Apply for Grant
+            </Button>
+          </NextLink>
         </Box>
       </Container>
     </Simple>

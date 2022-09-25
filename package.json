@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier './src/**/*.{tsx,ts}' --write",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "prettier": "prettier './src/**/*.{tsx,ts}' --write"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",

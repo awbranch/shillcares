@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import NextLink from 'next/link';
 
 const required = 'Required';
 const invalidEmail = 'Please enter a valid email address';
@@ -610,18 +611,20 @@ const ApplyForm = (): JSX.Element => {
                   size="medium"
                   type="submit"
                 >
-                  Submit
+                  Apply
                 </Button>
-                <Button
-                  sx={{ height: 54, minWidth: 150 }}
-                  component={'a'}
-                  variant="outlined"
-                  color="primary"
-                  size="medium"
-                  href={'/'}
-                >
-                  Cancel
-                </Button>
+                <NextLink href="/" passHref>
+                  <Button
+                    sx={{ height: 54, minWidth: 150 }}
+                    component={'a'}
+                    variant="outlined"
+                    color="primary"
+                    size="medium"
+                    href={'/'}
+                  >
+                    Cancel
+                  </Button>
+                </NextLink>
               </Stack>
             </Grid>
           </Grid>
