@@ -577,7 +577,7 @@ const ApplyForm = (): JSX.Element => {
             <Grid item xs={12}>
               <TextField
                 sx={{ height: 54 }}
-                label="Project start and and dates *"
+                label="Project start and end dates *"
                 variant="outlined"
                 color="primary"
                 size="medium"
@@ -603,7 +603,7 @@ const ApplyForm = (): JSX.Element => {
                 variant="outlined"
                 color="primary"
                 size="medium"
-                name="projectTotalCost"
+                name="projectArea"
                 fullWidth
                 value={formik.values.projectArea}
                 onChange={formik.handleChange}
