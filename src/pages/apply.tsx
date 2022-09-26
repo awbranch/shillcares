@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Simple from 'layouts/simple/Simple';
 import Container from 'components/Container';
-import ApplyForm from 'components/ApplyForm';
+import ApplyForm from 'components/applyForm/ApplyForm';
 
 const Home: NextPage = () => {
   return (
