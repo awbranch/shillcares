@@ -304,7 +304,6 @@ const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
           <TextField
             sx={{ height: 54 }}
             label="Email *"
-            type="email"
             variant="outlined"
             color="primary"
             size="medium"
@@ -402,7 +401,6 @@ const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
           <TextField
             sx={{ height: 54 }}
             label="Email"
-            type="email"
             variant="outlined"
             color="primary"
             size="medium"
