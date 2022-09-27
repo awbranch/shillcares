@@ -1,4 +1,7 @@
 import nodemailer from 'nodemailer';
+import React from 'react';
+import * as ReactDOMServer from 'react-dom/server';
+import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmail';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -12,11 +15,15 @@ const transporter = nodemailer.createTransport({
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
+      let application = req.body as GrantApplication;
+
       let status = await transporter.sendMail({
         from: process.env.APPLICATION_FROM,
         to: process.env.APPLICATION_TO,
         subject: 'Shill Cares Grant Application',
-        text: JSON.stringify(req.body, null, 3),
+        html: ReactDOMServer.renderToString(
+          React.createElement(ApplicationSubmittedEmail, { application }),
+        ),
       });
 
       console.log(
@@ -26,6 +33,7 @@ const handler = async (req, res) => {
           status.accepted,
         )} rejected: ${JSON.stringify(status.rejected)}`,
       );
+
       console.log(JSON.stringify(req.body, null, 3));
 
       res.status(200).json({ message: 'Application Submitted Successfully' });

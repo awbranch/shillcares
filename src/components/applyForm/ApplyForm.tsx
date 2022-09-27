@@ -12,7 +12,7 @@ const ApplyForm = (): JSX.Element => {
   const [status, setStatus] = useState<Status>('start');
   const [statusMessage, setStatusMessage] = useState('');
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: GrantApplication) => {
     setStatus('processing');
     let res = await fetch('/api/apply', {
       method: 'POST',

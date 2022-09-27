@@ -49,16 +49,16 @@ const validationSchema = yup.object({
 
 interface Props {
   testMode: boolean;
-  onSubmit: (any) => Promise<void>;
+  onSubmit: (GrantApplication) => Promise<void>;
 }
 
 const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
-  const initialValues = testMode
+  const initialValues: GrantApplication = testMode
     ? {
-        organization: 'organization',
-        website: 'https://www.organization.org',
+        organization: 'Some Non Profit',
+        website: 'https://www.nonprofit.org',
         founded: '1999',
-        budget: '2,000,000',
+        budget: '$2,000,000',
         address1: '123 Main Street',
         address2: '',
         city: 'Anytown',
@@ -73,9 +73,9 @@ const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
         contactPhone: '(444) 444-4444',
         projectName: 'Dog Spa',
         projectGoals: 'To make a spa for dogs',
-        projectRequestedAmount: '$2,000',
-        projectTotalCost: '$2,000',
-        projectDates: '10/1/2022',
+        projectRequestedAmount: '$20,000',
+        projectTotalCost: '$50,000',
+        projectDates: '10/1/2022 to 10/1/2023',
         projectArea: 'Monroe County',
       }
     : {
@@ -106,7 +106,9 @@ const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
   const formik = useFormik({
     initialValues,
     validationSchema: validationSchema,
-    onSubmit,
+    onSubmit: async (values) => {
+      await onSubmit(values as GrantApplication);
+    },
   });
 
   return (
