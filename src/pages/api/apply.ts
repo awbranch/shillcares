@@ -16,14 +16,25 @@ const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
       let application = req.body as GrantApplication;
-
+      let logoPath = 'logo@shillcares.org';
       let status = await transporter.sendMail({
         from: process.env.APPLICATION_FROM,
         to: process.env.APPLICATION_TO,
         subject: 'Shill Cares Grant Application',
         html: ReactDOMServer.renderToString(
-          React.createElement(ApplicationSubmittedEmail, { application }),
+          React.createElement(ApplicationSubmittedEmail, {
+            application,
+            logoPath: `cid:${logoPath}`,
+            submitted: new Date().toLocaleDateString(),
+          }),
         ),
+        attachments: [
+          {
+            filename: 'logo.png',
+            path: `${process.cwd()}/public/logo.png`,
+            cid: logoPath,
+          },
+        ],
       });
 
       console.log(
