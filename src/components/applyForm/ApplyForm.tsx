@@ -8,7 +8,11 @@ import SuccessMessage from './components/SuccessMessage';
 
 type Status = 'start' | 'processing' | 'ok' | 'error';
 
-const ApplyForm = (): JSX.Element => {
+interface Props {
+  testMode: boolean;
+}
+
+const ApplyForm = ({ testMode }: Props): JSX.Element => {
   const [status, setStatus] = useState<Status>('start');
   const [statusMessage, setStatusMessage] = useState('');
 
@@ -49,7 +53,7 @@ const ApplyForm = (): JSX.Element => {
       </Box>
       <Box>
         {status === 'start' ? (
-          <Form testMode={false} onSubmit={onSubmit} />
+          <Form testMode={testMode} onSubmit={onSubmit} />
         ) : status === 'processing' ? (
           <ProcessingMessage />
         ) : status === 'error' ? (

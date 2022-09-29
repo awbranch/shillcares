@@ -18,9 +18,9 @@ const ApplicationSubmittedEmail = ({
           textAlign: 'center',
         }}
       >
-        <img src={logoPath} width={160} />
+        <img src={logoPath} width={200} />
       </div>
-      <Title>Grant Application: {application.projectName}</Title>
+      <Title>{application.projectName}</Title>
       <Text>Submitted: {submitted.toLocaleString()}</Text>
 
       <Table>
@@ -180,8 +180,6 @@ const Header = ({ children }: ElementProps): JSX.Element => {
         fontSize: '6.5pt',
         fontWeight: 600,
         color: '#555',
-        textDecoration: 'underline',
-        textUnderlineOffset: '0.1rem',
         letterSpacing: '.08rem',
         textTransform: 'uppercase',
         margin: '20pt 0 2pt 0',

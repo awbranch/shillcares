@@ -16,7 +16,7 @@ const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
       let application = req.body as GrantApplication;
-      let logoPath = 'logo@shillcares.org';
+      let logoPath = 'email-header@shillcares.org';
       let status = await transporter.sendMail({
         from: process.env.APPLICATION_FROM,
         to: process.env.APPLICATION_TO,
@@ -30,8 +30,8 @@ const handler = async (req, res) => {
         ),
         attachments: [
           {
-            filename: 'logo.png',
-            path: `${process.cwd()}/public/logo.png`,
+            filename: 'email-header.png',
+            path: `${process.cwd()}/public/email-header.png`,
             cid: logoPath,
           },
         ],
