@@ -46,7 +46,7 @@ const ApplyForm = ({ application }: Props): JSX.Element => {
         <Typography color="text.secondary" paragraph>
           The Molly and Ed Shill Cares Foundation funds organizations that
           provide food, shelter, reduce violence and provide opportunities for
-          success in New York&pos;s Monroe and Ontario counties. If your
+          success in New York&apos;s Monroe and Ontario counties. If your
           organization aligns with this mission, please complete this form and
           provide details on your request.
         </Typography>
