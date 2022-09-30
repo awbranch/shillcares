@@ -21,11 +21,11 @@ Commiting to this git repo will cause it to redeploy to Vercel automatically.
 ## TODOs
 
 x - Send the foundation an html formatted email
-- Send the applicant an html formatted email
-- Can logos be included in the html
-- Log the application to the console, so it can be found if lost
-- Display a progress message to the user while submitting
-- Display a success message to the user
+x - Send the applicant an html formatted email
+x - Can logos be included in the html
+x - Log the application to the console, so it can be found if lost
+x - Display a progress message to the user while submitting
+x - Display a success message to the user
 - Display an error message to the user - Can they get back into the form without loosing all their work? May need to not remove the form from the dom when submitting but just hide it?
 - Check what happens if after the form is completed they go back again, is it cleared?
 - What happens if they hit the back button while the form is submitting?

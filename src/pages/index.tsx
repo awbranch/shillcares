@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           </Typography>
           <NextLink href="/apply" passHref>
             <Button
-              sx={{ textAlign: 'center', mt: 5, fontSize: 16 }}
+              sx={{ textAlign: 'center', mt: 5, height: 54, minWidth: 200 }}
               component={'a'}
               variant="contained"
               color="primary"

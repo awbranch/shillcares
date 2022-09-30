@@ -50,512 +50,365 @@ const Form = ({ application, onSubmit }: Props): JSX.Element => {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant={'h2'} sx={{ marginBottom: 2 }}>
-            Organization
-          </Typography>
-          <TextField
-            sx={{ height: 54 }}
-            label="Legal name as supplied on IRS form 990 *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="organization"
-            fullWidth
-            value={formik.values.organization}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.organization && Boolean(formik.errors.organization)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.organization && formik.errors.organization
-            }
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Website"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="website"
-            fullWidth
-            value={formik.values.website}
-            onChange={formik.handleChange}
-            error={formik.touched.website && Boolean(formik.errors.website)}
-            // @ts-ignore
-            helperText={formik.touched.website && formik.errors.website}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Year founded *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="founded"
-            fullWidth
-            value={formik.values.founded}
-            onChange={formik.handleChange}
-            error={formik.touched.founded && Boolean(formik.errors.founded)}
-            // @ts-ignore
-            helperText={formik.touched.founded && formik.errors.founded}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Annual operating budget *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="budget"
-            fullWidth
-            value={formik.values.budget}
-            onChange={formik.handleChange}
-            error={formik.touched.budget && Boolean(formik.errors.budget)}
-            // @ts-ignore
-            helperText={formik.touched.budget && formik.errors.budget}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Street address line 1 *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="address1"
-            fullWidth
-            value={formik.values.address1}
-            onChange={formik.handleChange}
-            error={formik.touched.address1 && Boolean(formik.errors.address1)}
-            // @ts-ignore
-            helperText={formik.touched.address1 && formik.errors.address1}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Street address line 2"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="address2"
-            fullWidth
-            value={formik.values.address2}
-            onChange={formik.handleChange}
-            error={formik.touched.address2 && Boolean(formik.errors.address2)}
-            // @ts-ignore
-            helperText={formik.touched.address2 && formik.errors.address2}
-          />
-        </Grid>
-        <Grid item xs={12} sm={5}>
-          <TextField
-            sx={{ height: 54 }}
-            label="City *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="city"
-            fullWidth
-            value={formik.values.city}
-            onChange={formik.handleChange}
-            error={formik.touched.city && Boolean(formik.errors.city)}
-            // @ts-ignore
-            helperText={formik.touched.city && formik.errors.city}
-          />
-        </Grid>
-        <Grid item xs={12} sm={2}>
-          <TextField
-            sx={{ height: 54 }}
-            label="State *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="state"
-            fullWidth
-            value={formik.values.state}
-            onChange={formik.handleChange}
-            error={formik.touched.state && Boolean(formik.errors.state)}
-            // @ts-ignore
-            helperText={formik.touched.state && formik.errors.state}
-          />
-        </Grid>
-        <Grid item xs={12} sm={5}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Zip / Postal Code *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="zip"
-            fullWidth
-            value={formik.values.zip}
-            onChange={formik.handleChange}
-            error={formik.touched.zip && Boolean(formik.errors.zip)}
-            // @ts-ignore
-            helperText={formik.touched.zip && formik.errors.zip}
-          />
-        </Grid>
-      </Grid>
-
-      <Box paddingTop={6} paddingBottom={4}>
-        <Divider />
-      </Box>
-
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
-            Leadership
-          </Typography>
-          <Typography
-            variant={'body2'}
-            color="text.secondary"
-            sx={{ marginBottom: 2 }}
-          >
-            The executive director of the organization
-          </Typography>
-          <TextField
-            sx={{ height: 54 }}
-            label="Name *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="directorName"
-            fullWidth
-            value={formik.values.directorName}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.directorName && Boolean(formik.errors.directorName)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.directorName && formik.errors.directorName
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Email *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="directorEmail"
-            fullWidth
-            value={formik.values.directorEmail}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.directorEmail &&
-              Boolean(formik.errors.directorEmail)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.directorEmail && formik.errors.directorEmail
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Phone *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="directorPhone"
-            fullWidth
-            value={formik.values.directorPhone}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.directorPhone &&
-              Boolean(formik.errors.directorPhone)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.directorPhone && formik.errors.directorPhone
-            }
-          />
-        </Grid>
-      </Grid>
-
-      <Box paddingTop={6} paddingBottom={4}>
-        <Divider />
-      </Box>
-
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
-            Contact
-          </Typography>
-          <Typography
-            variant={'body2'}
-            color="text.secondary"
-            sx={{ marginBottom: 2 }}
-          >
-            If different from the executive director
-          </Typography>
-          <TextField
-            sx={{ height: 54 }}
-            label="Name"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="contactName"
-            fullWidth
-            value={formik.values.contactName}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.contactName && Boolean(formik.errors.contactName)
-            }
-            // @ts-ignore
-            helperText={formik.touched.contactName && formik.errors.contactName}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Title"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="contactTitle"
-            fullWidth
-            value={formik.values.contactTitle}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.contactTitle && Boolean(formik.errors.contactTitle)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.contactTitle && formik.errors.contactTitle
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Email"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="contactEmail"
-            fullWidth
-            value={formik.values.contactEmail}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.contactEmail && Boolean(formik.errors.contactEmail)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.contactEmail && formik.errors.contactEmail
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Phone"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="contactPhone"
-            fullWidth
-            value={formik.values.contactPhone}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.contactPhone && Boolean(formik.errors.contactPhone)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.contactPhone && formik.errors.contactPhone
-            }
-          />
-        </Grid>
-      </Grid>
-
-      <Box paddingTop={6} paddingBottom={4}>
-        <Divider />
-      </Box>
-
-      <Grid container spacing={4}>
-        <Grid item xs={12}>
-          <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
-            Project
-          </Typography>
-          <Typography
-            variant={'body2'}
-            color="text.secondary"
-            sx={{ marginBottom: 2 }}
-          >
-            Details about the project to be granted
-          </Typography>
-
-          <TextField
-            sx={{ height: 54 }}
-            label="Project name *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectName"
-            fullWidth
-            value={formik.values.projectName}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectName && Boolean(formik.errors.projectName)
-            }
-            // @ts-ignore
-            helperText={formik.touched.projectName && formik.errors.projectName}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            label="Project goals *"
-            multiline
-            rows={10}
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectGoals"
-            fullWidth
-            value={formik.values.projectGoals}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectGoals && Boolean(formik.errors.projectGoals)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.projectGoals && formik.errors.projectGoals
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Requested amount *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectRequestedAmount"
-            fullWidth
-            value={formik.values.projectRequestedAmount}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectRequestedAmount &&
-              Boolean(formik.errors.projectRequestedAmount)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.projectRequestedAmount &&
-              formik.errors.projectRequestedAmount
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Total project cost *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectTotalCost"
-            fullWidth
-            value={formik.values.projectTotalCost}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectTotalCost &&
-              Boolean(formik.errors.projectTotalCost)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.projectTotalCost && formik.errors.projectTotalCost
-            }
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            sx={{ height: 54 }}
-            label="Project start and end dates *"
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectDates"
-            fullWidth
-            value={formik.values.projectDates}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectDates && Boolean(formik.errors.projectDates)
-            }
-            // @ts-ignore
-            helperText={
-              formik.touched.projectDates && formik.errors.projectDates
-            }
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            label="Geographic areas to be served *"
-            multiline
-            rows={3}
-            variant="outlined"
-            color="primary"
-            size="medium"
-            name="projectArea"
-            fullWidth
-            value={formik.values.projectArea}
-            onChange={formik.handleChange}
-            error={
-              formik.touched.projectArea && Boolean(formik.errors.projectArea)
-            }
-            // @ts-ignore
-            helperText={formik.touched.projectArea && formik.errors.projectArea}
-          />
-        </Grid>
-        <Grid item container justifyContent={'left'} xs={12}>
-          <Box>
-            <Typography component="p" variant="body2" align="center">
-              By clicking on &quot;submit&quot; you certify to the best of your
-              knowledge, the tax-exempt status of this Organization is still in
-              effect. If a grant is awarded to this Organization, the proceeds
-              of that grant will not be distributed to or used to benefit any
-              organization or individual supporting or engaged in terrorism, or
-              used for any other unlawful purpose.
+    <Box marginBottom={4}>
+      <Typography variant={'h1'}>Grant Application</Typography>
+      <Typography sx={{ marginBottom: 4 }} color="text.secondary" paragraph>
+        The Molly and Ed Shill Cares Foundation funds organizations that provide
+        food, shelter, reduce violence and provide opportunities for success in
+        New York&apos;s Monroe and Ontario counties. If your organization aligns
+        with this mission, please complete this form and provide details on your
+        request.
+      </Typography>
+      <form onSubmit={formik.handleSubmit}>
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Typography variant={'h2'} sx={{ marginBottom: 2 }}>
+              Organization
             </Typography>
-          </Box>
-        </Grid>
-        <Grid item container justifyContent={'center'} xs={12}>
-          <Stack direction="row" spacing={2}>
-            <Button
-              sx={{ height: 54, minWidth: 150 }}
-              variant="contained"
+            <TextField
+              sx={{ height: 54 }}
+              label="Legal name as supplied on IRS form 990 *"
+              name="organization"
+              fullWidth
+              {...getFieldProps('organization', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Website"
+              variant="outlined"
               color="primary"
               size="medium"
-              type="submit"
+              fullWidth
+              {...getFieldProps('website', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Year founded *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('founded', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Annual operating budget *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('budget', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Street address line 1 *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('address1', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Street address line 2"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('address2', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={5}>
+            <TextField
+              sx={{ height: 54 }}
+              label="City *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('city', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={2}>
+            <TextField
+              sx={{ height: 54 }}
+              label="State *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('state', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={5}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Zip / Postal Code *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('zip', formik)}
+            />
+          </Grid>
+        </Grid>
+
+        <Box paddingTop={6} paddingBottom={4}>
+          <Divider />
+        </Box>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
+              Leadership
+            </Typography>
+            <Typography
+              variant={'body2'}
+              color="text.secondary"
+              sx={{ marginBottom: 2 }}
             >
-              Apply
-            </Button>
-            <NextLink href="/" passHref>
+              The executive director of the organization
+            </Typography>
+            <TextField
+              sx={{ height: 54 }}
+              label="Name *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('directorName', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Email *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('directorEmail', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Phone *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('directorPhone', formik)}
+            />
+          </Grid>
+        </Grid>
+
+        <Box paddingTop={6} paddingBottom={4}>
+          <Divider />
+        </Box>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
+              Contact
+            </Typography>
+            <Typography
+              variant={'body2'}
+              color="text.secondary"
+              sx={{ marginBottom: 2 }}
+            >
+              If different from the executive director
+            </Typography>
+            <TextField
+              sx={{ height: 54 }}
+              label="Name"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('contactName', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Title"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('contactTitle', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Email"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('contactEmail', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Phone"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('contactPhone', formik)}
+            />
+          </Grid>
+        </Grid>
+
+        <Box paddingTop={6} paddingBottom={4}>
+          <Divider />
+        </Box>
+
+        <Grid container spacing={4}>
+          <Grid item xs={12}>
+            <Typography variant={'h2'} sx={{ marginBottom: 0.25 }}>
+              Project
+            </Typography>
+            <Typography
+              variant={'body2'}
+              color="text.secondary"
+              sx={{ marginBottom: 2 }}
+            >
+              Details about the project to be granted
+            </Typography>
+
+            <TextField
+              sx={{ height: 54 }}
+              label="Project name *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectName', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Project goals *"
+              multiline
+              rows={10}
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectGoals', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Requested amount *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectRequestedAmount', formik)}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Total project cost *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectTotalCost', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              sx={{ height: 54 }}
+              label="Project start and end dates *"
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectDates', formik)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Geographic areas to be served *"
+              multiline
+              rows={3}
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('projectArea', formik)}
+            />
+          </Grid>
+          <Grid item container justifyContent={'left'} xs={12}>
+            <Box>
+              <Typography component="p" variant="body2" align="center">
+                By clicking on &quot;submit&quot; you certify to the best of
+                your knowledge, the tax-exempt status of this Organization is
+                still in effect. If a grant is awarded to this Organization, the
+                proceeds of that grant will not be distributed to or used to
+                benefit any organization or individual supporting or engaged in
+                terrorism, or used for any other unlawful purpose.
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item container justifyContent={'center'} xs={12}>
+            <Stack direction="row" spacing={2}>
               <Button
                 sx={{ height: 54, minWidth: 150 }}
-                component={'a'}
-                variant="outlined"
+                variant="contained"
                 color="primary"
-                size="medium"
-                href={'/'}
+                size="large"
+                type="submit"
               >
-                Cancel
+                Apply
               </Button>
-            </NextLink>
-          </Stack>
+              <NextLink href="/" passHref>
+                <Button
+                  sx={{ height: 54, minWidth: 150 }}
+                  component={'a'}
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                >
+                  Cancel
+                </Button>
+              </NextLink>
+            </Stack>
+          </Grid>
         </Grid>
-      </Grid>
-    </form>
+      </form>
+    </Box>
   );
+};
+
+const getFieldProps = (name: string, formik: any) => {
+  return {
+    id: name,
+    name: name,
+    value: formik.values[name],
+    onChange: formik.handleChange,
+    error: formik.touched[name] && Boolean(formik.errors[name]),
+    helperText: formik.touched[name] && formik.errors[name],
+  };
 };
 
 export default Form;
