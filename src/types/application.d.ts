@@ -1,4 +1,5 @@
 interface GrantApplication {
+  accounting: string;
   organization: string;
   website: string;
   founded: string;

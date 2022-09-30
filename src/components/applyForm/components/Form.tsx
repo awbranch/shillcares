@@ -17,6 +17,7 @@ interface Props {
 
 const Form = ({ application, onSubmit }: Props): JSX.Element => {
   const initialValues = application || {
+    accounting: '',
     organization: '',
     website: '',
     founded: '',
@@ -60,6 +61,15 @@ const Form = ({ application, onSubmit }: Props): JSX.Element => {
         request.
       </Typography>
       <form onSubmit={formik.handleSubmit}>
+        {/* This is a honeypot field to catch bots. If text gets enetered here, something is wrong */}
+        <Box sx={{ position: 'fixed', top: 3000 }}>
+          <TextField
+            sx={{ height: 54 }}
+            label="Accounting *"
+            {...getFieldProps('accounting', formik)}
+          />
+        </Box>
+
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant={'h2'} sx={{ marginBottom: 2 }}>
@@ -68,7 +78,9 @@ const Form = ({ application, onSubmit }: Props): JSX.Element => {
             <TextField
               sx={{ height: 54 }}
               label="Legal name as supplied on IRS form 990 *"
-              name="organization"
+              variant="outlined"
+              color="primary"
+              size="medium"
               fullWidth
               {...getFieldProps('organization', formik)}
             />

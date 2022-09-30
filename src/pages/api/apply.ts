@@ -23,6 +23,12 @@ const handler = async (req, res) => {
         stripUnknown: true,
       });
 
+      // Check the honeypot it must be blank
+      if (application.accounting.length !== 0) {
+        res.status(500).send({ message: 'Invalid Application' });
+        return;
+      }
+
       console.log(JSON.stringify(application, null, 3));
       let logoPath = 'email-header@shillcares.org';
 

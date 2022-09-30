@@ -4,6 +4,7 @@ const required = 'Required';
 const invalidEmail = 'Please enter a valid email address';
 
 const applicationSchema = yup.object({
+  accounting: yup.string(),
   organization: yup.string().trim().required(required),
   website: yup.string().trim(),
   founded: yup
