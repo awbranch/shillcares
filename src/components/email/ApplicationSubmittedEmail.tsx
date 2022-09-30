@@ -1,4 +1,15 @@
 import React from 'react';
+import {
+  Page,
+  Logo,
+  Title,
+  Table,
+  Row,
+  Cell,
+  DoubleCell,
+  Header,
+  Text,
+} from './elements';
 
 interface Props {
   application: GrantApplication;
@@ -13,13 +24,7 @@ const ApplicationSubmittedEmail = ({
 }: Props): JSX.Element => {
   return (
     <Page>
-      <div
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        <img src={logoPath} width={200} />
-      </div>
+      <Logo path={logoPath} />
       <Title>{application.projectName}</Title>
       <Text>Submitted: {submitted.toLocaleString()}</Text>
 
@@ -107,101 +112,6 @@ const ApplicationSubmittedEmail = ({
         </Row>
       </Table>
     </Page>
-  );
-};
-
-interface ElementProps {
-  children: React.ReactNode;
-}
-
-const Page = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <div
-      style={{
-        margin: '10pt',
-        padding: '30pt',
-        borderRadius: '5px',
-        maxWidth: '500pt',
-        border: '1px solid #aaa',
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Table = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <table
-      style={{
-        width: '100%',
-      }}
-    >
-      <tbody>{children}</tbody>
-    </table>
-  );
-};
-
-const Row = ({ children }: ElementProps): JSX.Element => {
-  return <tr>{children}</tr>;
-};
-
-const Cell = ({ children }: ElementProps): JSX.Element => {
-  return <td style={{ verticalAlign: 'top' }}>{children}</td>;
-};
-
-const DoubleCell = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <td colSpan={2} style={{ verticalAlign: 'top' }}>
-      {children}
-    </td>
-  );
-};
-
-const Title = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <div
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontSize: '15pt',
-        marginTop: '20pt',
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Header = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <div
-      style={{
-        fontFamily: 'Georgia, serif',
-        fontSize: '6.5pt',
-        fontWeight: 600,
-        color: '#555',
-        letterSpacing: '.08rem',
-        textTransform: 'uppercase',
-        margin: '20pt 0 2pt 0',
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Text = ({ children }: ElementProps): JSX.Element => {
-  return (
-    <div
-      style={{
-        fontFamily: 'Arial, Helvetica, sans-serif',
-        fontWeight: 400,
-        margin: 0,
-        fontSize: '11pt',
-      }}
-    >
-      {children}
-    </div>
   );
 };
 

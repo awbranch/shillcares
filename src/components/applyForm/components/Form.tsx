@@ -1,6 +1,5 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import * as yup from 'yup';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -9,104 +8,42 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import NextLink from 'next/link';
-
-const required = 'Required';
-const invalidEmail = 'Please enter a valid email address';
-
-const validationSchema = yup.object({
-  organization: yup.string().trim().required(required),
-  website: yup.string().trim(),
-  founded: yup
-    .string()
-    .trim()
-    .min(4, 'Please enter a valid year')
-    .max(4, 'Please enter a valid year')
-    .required(required),
-  budget: yup.string().trim().required(required),
-
-  address1: yup.string().trim().required(required),
-  address2: yup.string().trim(),
-  city: yup.string().trim().required(required),
-  state: yup.string().trim().required(required),
-  zip: yup.string().trim().required(required),
-
-  directorName: yup.string().trim().required(required),
-  directorEmail: yup.string().trim().email(invalidEmail).required(required),
-  directorPhone: yup.string().trim().required(required),
-
-  contactName: yup.string().trim(),
-  contactTitle: yup.string().trim(),
-  contactEmail: yup.string().trim().email(invalidEmail),
-  contactPhone: yup.string().trim(),
-
-  projectName: yup.string().trim().required(required),
-  projectRequestedAmount: yup.string().trim().required(required),
-  projectTotalCost: yup.string().trim().required(required),
-  projectDates: yup.string().trim().required(required),
-  projectArea: yup.string().trim().required(required),
-  projectGoals: yup.string().trim().required(required),
-});
+import applicationSchema from 'utils/applicationFormSchema';
 
 interface Props {
-  testMode: boolean;
+  application?: GrantApplication;
   onSubmit: (GrantApplication) => Promise<void>;
 }
 
-const Form = ({ testMode, onSubmit }: Props): JSX.Element => {
-  const initialValues: GrantApplication = testMode
-    ? {
-        organization: 'Some Non Profit',
-        website: 'https://www.nonprofit.org',
-        founded: '1999',
-        budget: '$2,000,000',
-        address1: '123 Main Street',
-        address2: '',
-        city: 'Anytown',
-        state: 'NY',
-        zip: '12345',
-        directorName: 'Jane Doe',
-        directorEmail: 'jane.doe@organization.org',
-        directorPhone: '(555) 555-5555',
-        contactName: 'John Doe',
-        contactTitle: 'CTO',
-        contactEmail: 'john.doe@organization.org',
-        contactPhone: '(444) 444-4444',
-        projectName: 'New Dog Shelter',
-        projectGoals:
-          'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?',
-        projectRequestedAmount: '$20,000',
-        projectTotalCost: '$50,000',
-        projectDates: '10/1/2022 to 10/1/2023',
-        projectArea: 'Monroe County',
-      }
-    : {
-        organization: '',
-        website: '',
-        founded: '',
-        budget: '',
-        address1: '',
-        address2: '',
-        city: '',
-        state: '',
-        zip: '',
-        directorName: '',
-        directorEmail: '',
-        directorPhone: '',
-        contactName: '',
-        contactTitle: '',
-        contactEmail: '',
-        contactPhone: '',
-        projectName: '',
-        projectGoals: '',
-        projectRequestedAmount: '',
-        projectTotalCost: '',
-        projectDates: '',
-        projectArea: '',
-      };
+const Form = ({ application, onSubmit }: Props): JSX.Element => {
+  const initialValues = application || {
+    organization: '',
+    website: '',
+    founded: '',
+    budget: '',
+    address1: '',
+    address2: '',
+    city: '',
+    state: '',
+    zip: '',
+    directorName: '',
+    directorEmail: '',
+    directorPhone: '',
+    contactName: '',
+    contactTitle: '',
+    contactEmail: '',
+    contactPhone: '',
+    projectName: '',
+    projectGoals: '',
+    projectRequestedAmount: '',
+    projectTotalCost: '',
+    projectDates: '',
+    projectArea: '',
+  };
 
   const formik = useFormik({
     initialValues,
-    validationSchema: validationSchema,
+    validationSchema: applicationSchema,
     onSubmit: async (values) => {
       await onSubmit(values as GrantApplication);
     },

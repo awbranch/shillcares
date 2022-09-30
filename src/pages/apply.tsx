@@ -4,24 +4,17 @@ import Container from 'components/Container';
 import ApplyForm from 'components/applyForm/ApplyForm';
 
 interface Props {
-  testMode: boolean;
+  application?: GrantApplication;
 }
 
-const Home: NextPage = ({ testMode }: Props) => {
+const Home: NextPage = ({ application }: Props) => {
   return (
     <Simple>
       <Container>
-        <ApplyForm testMode={testMode} />
+        <ApplyForm application={application} />
       </Container>
     </Simple>
   );
 };
-
-export async function getServerSideProps(context) {
-  const testMode = process.env.FLAG_POPULATE_APPLY_FORM === 'true';
-  return {
-    props: { testMode },
-  };
-}
 
 export default Home;
