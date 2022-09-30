@@ -2,8 +2,9 @@ import nodemailer from 'nodemailer';
 import React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmail';
+import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmationEmail';
 import applicationSchema from 'utils/applicationFormSchema';
-import ApplicationConfirmationEmail from '../../components/email/ApplicationConfirmationEmail';
+import path from 'path';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -30,7 +31,8 @@ const handler = async (req, res) => {
       }
 
       console.log(JSON.stringify(application, null, 3));
-      let logoPath = 'email-header@shillcares.org';
+      let logoId = 'email-header@shillcares.org';
+      let logoPath = path.resolve('./public');
 
       // Send an email to the foundation
       let status = await transporter.sendMail({
@@ -40,15 +42,15 @@ const handler = async (req, res) => {
         html: ReactDOMServer.renderToString(
           React.createElement(ApplicationSubmittedEmail, {
             application,
-            logoPath: `cid:${logoPath}`,
+            logoPath: `cid:${logoId}`,
             submitted: new Date().toLocaleDateString(),
           }),
         ),
         attachments: [
           {
             filename: 'email-header.png',
-            path: `${process.cwd()}/public/email-header.png`,
-            cid: logoPath,
+            path: `${logoPath}/email-header.png`,
+            cid: logoId,
           },
         ],
       });
@@ -69,15 +71,15 @@ const handler = async (req, res) => {
         html: ReactDOMServer.renderToString(
           React.createElement(ApplicationConfirmationEmail, {
             application,
-            logoPath: `cid:${logoPath}`,
+            logoPath: `cid:${logoId}`,
             submitted: new Date().toLocaleDateString(),
           }),
         ),
         attachments: [
           {
             filename: 'email-header.png',
-            path: `${process.cwd()}/public/email-header.png`,
-            cid: logoPath,
+            path: `${logoPath}/email-header.png`,
+            cid: logoId,
           },
         ],
       });
