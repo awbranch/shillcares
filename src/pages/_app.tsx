@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Page from 'components/Page';
+import TagManager from 'react-gtm-module';
 
 function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-P673S3C' });
+  });
+
   return (
     <>
       <Head>
