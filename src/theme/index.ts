@@ -41,14 +41,13 @@ const getTheme = (): Theme =>
         body1: {
           fontFamily: 'Source Serif Pro',
           fontWeight: 400,
-          fontSize: '1.4rem',
+          fontSize: '1.3rem',
         },
         body2: {
           fontFamily: 'Noto Serif, serif',
           fontWeight: 500,
           fontSize: '0.875rem',
         },
-
         button: {
           textTransform: 'none',
           fontFamily: 'Noto Sans, serif',
@@ -60,6 +59,15 @@ const getTheme = (): Theme =>
         drawer: 1300,
       },
       components: {
+        MuiLink: {
+          styleOverrides: {
+            root: {
+              fontFamily: 'Noto Sans, serif',
+              fontWeight: 500,
+              fontSize: '1.1rem',
+            },
+          } as ComponentsOverrides['MuiLink'],
+        },
         MuiButton: {
           styleOverrides: {
             root: {
