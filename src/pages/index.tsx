@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import NextLink from 'next/link';
-import Simple from 'layouts/simple/Simple';
+import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 
 import Typography from '@mui/material/Typography';
@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 
 const Home: NextPage = () => {
   return (
-    <Simple>
+    <Main>
       <Container>
         <Typography variant="subtitle1">
           The mission of the Molly and Ed Shill Cares Foundation is to help all
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
           </NextLink>
         </Box>
       </Container>
-    </Simple>
+    </Main>
   );
 };
 

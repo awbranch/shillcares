@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import NextLink from 'next/link';
 import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
 
 interface Props {
   title: string;
@@ -22,12 +23,18 @@ const NavItem = ({ title, link, colorInvert }: Props): JSX.Element => {
     <Box>
       <NextLink href={link} passHref>
         <Link
-          underline={hasActiveLink ? 'always' : 'none'}
+          underline={hasActiveLink ? 'always' : 'hover'}
           component="a"
           color={linkColor}
-          sx={{ fontSize: '1rem', fontWeight: 400 }}
+          sx={{
+            fontSize: '1rem',
+            fontWeight: 400,
+            textDecorationThickness: '2px',
+          }}
         >
-          {title}
+          <Typography variant="h4" component="span">
+            {title}
+          </Typography>
         </Link>
       </NextLink>
     </Box>

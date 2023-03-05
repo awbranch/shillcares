@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import AppBar from '@mui/material/AppBar';
 
@@ -40,7 +39,14 @@ const Main = ({ children, colorInvert = false }: Props): JSX.Element => {
   const open = isMd ? false : openSidebar;
 
   return (
-    <Box>
+    <Box
+      sx={{
+        height: '100vh',
+        margin: '0',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
       <AppBar
         position={'fixed'}
         sx={{
@@ -61,11 +67,8 @@ const Main = ({ children, colorInvert = false }: Props): JSX.Element => {
       <main>
         <Box height={{ xs: 58, sm: 66 }} />
         {children}
-        <Divider />
       </main>
-      <Container paddingY={4}>
-        <Footer />
-      </Container>
+      <Footer />
     </Box>
   );
 };

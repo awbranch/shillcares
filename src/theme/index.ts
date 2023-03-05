@@ -11,25 +11,30 @@ const getTheme = (): Theme =>
       palette: mode === 'light' ? light : dark,
       shadows: shadows(mode),
       typography: {
-        fontFamily: 'Georgia',
+        fontFamily: 'Noto Serif, serif',
         h1: {
-          fontSize: '2.5rem',
-          lineHeight: 1.45,
-          fontWeight: 500,
-          marginBottom: '1.5rem',
+          fontSize: '3.6rem',
+          fontWeight: 600,
         },
         h2: {
-          fontSize: '1.5rem',
-          fontWeight: 500,
-          marginBottom: '1.5rem',
+          fontSize: '2.6rem',
+          fontWeight: 600,
+        },
+        h3: {
+          fontSize: '1.25rem',
+          fontWeight: 600,
+        },
+        h4: {
+          fontSize: '1rem',
+          fontFamily: 'Noto Sans, sans-serif',
         },
         subtitle1: {
-          lineHeight: 1.3,
-          fontSize: '1.6rem',
+          fontSize: '1.5rem',
+          fontWeight: 400,
         },
         button: {
           textTransform: 'none',
-          fontFamily: 'Allerta, sans-serif',
+          fontFamily: 'Noto Sans, sans-serif',
           fontWeight: 'medium' as React.CSSProperties['fontWeight'],
         },
       },
@@ -41,18 +46,20 @@ const getTheme = (): Theme =>
         MuiButton: {
           styleOverrides: {
             root: {
-              fontWeight: 400,
-              borderRadius: 5,
+              fontWeight: 500,
+              borderRadius: 23,
               paddingTop: 10,
               paddingBottom: 10,
+              paddingLeft: 50,
+              paddingRight: 50,
             },
-            containedSecondary: mode === 'light' ? { color: 'white' } : {},
           } as ComponentsOverrides['MuiButton'],
         },
         MuiInputBase: {
           styleOverrides: {
             root: {
               borderRadius: 5,
+              background: 'white',
             },
           } as ComponentsOverrides['MuiInputBase'],
         },

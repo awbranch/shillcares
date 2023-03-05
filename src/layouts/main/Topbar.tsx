@@ -38,7 +38,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }: Props): JSX.Element => {
         sx={{ display: { xs: 'none', md: 'flex' } }}
       >
         <NavItem title="Our Work" link="/work" colorInvert={colorInvert} />
-        <NavItem title="About" link="/about" colorInvert={colorInvert} />
+        <NavItem title="About Us" link="/about" colorInvert={colorInvert} />
         <NavItem title="Contact Us" link="/contact" colorInvert={colorInvert} />
       </Stack>
       <Box sx={{ display: { xs: 'flex', md: 'none' } }} alignItems={'center'}>
