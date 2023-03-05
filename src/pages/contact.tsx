@@ -9,7 +9,9 @@ const Contact: NextPage = ({}: Props) => {
   return (
     <Main>
       <Container>
-        <Typography variant="h1">Contact Us</Typography>
+        <Typography variant="h2" component="h2">
+          Contact Us
+        </Typography>
       </Container>
     </Main>
   );

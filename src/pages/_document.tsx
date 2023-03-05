@@ -42,8 +42,9 @@ class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin=""
           />
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Serif:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&family=Source+Serif+Pro:wght@400;600&display=swap"
             rel="stylesheet"
           />
         </Head>

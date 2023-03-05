@@ -65,7 +65,7 @@ const Main = ({ children, colorInvert = false }: Props): JSX.Element => {
       </AppBar>
       <Sidebar onClose={handleSidebarClose} open={open} variant="temporary" />
       <main>
-        <Box height={{ xs: 58, sm: 66 }} />
+        <Box height={{ xs: 120 }} />
         {children}
       </main>
       <Footer />

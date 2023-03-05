@@ -11,31 +11,48 @@ const getTheme = (): Theme =>
       palette: mode === 'light' ? light : dark,
       shadows: shadows(mode),
       typography: {
-        fontFamily: 'Noto Serif, serif',
         h1: {
-          fontSize: '3.6rem',
+          fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
+          fontSize: '3.3rem',
+          lineHeight: 1.3,
         },
         h2: {
-          fontSize: '2.6rem',
+          fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
+          fontSize: '2.8rem',
         },
         h3: {
-          fontSize: '1.25rem',
+          fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
+          fontSize: '1.25rem',
         },
         h4: {
+          fontFamily: 'Noto Sans, serif',
+          fontWeight: 500,
           fontSize: '1rem',
-          fontFamily: 'Noto Sans, sans-serif',
         },
         subtitle1: {
-          fontSize: '1.5rem',
+          fontFamily: 'Source Serif Pro, serif',
           fontWeight: 400,
+          lineHeight: 1.4,
+          fontSize: '1.8rem',
         },
+        body1: {
+          fontFamily: 'Source Serif Pro',
+          fontWeight: 400,
+          fontSize: '1.4rem',
+        },
+        body2: {
+          fontFamily: 'Noto Serif, serif',
+          fontWeight: 500,
+          fontSize: '0.875rem',
+        },
+
         button: {
           textTransform: 'none',
-          fontFamily: 'Noto Sans, sans-serif',
-          fontWeight: 'medium' as React.CSSProperties['fontWeight'],
+          fontFamily: 'Noto Sans, serif',
+          fontWeight: 500,
         },
       },
       zIndex: {

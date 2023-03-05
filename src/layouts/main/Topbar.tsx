@@ -28,13 +28,13 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }: Props): JSX.Element => {
           title="Shill Cares Foundation"
           width={{ xs: 100, md: 120 }}
         >
-          <Box component={'img'} src={'/logo.svg'} height={1} width={1} />
+          <Box component={'img'} src={'/logo-horiz.svg'} height={80} />
         </Box>
       </NextLink>
 
       <Stack
         direction="row"
-        spacing={2}
+        spacing={4}
         sx={{ display: { xs: 'none', md: 'flex' } }}
       >
         <NavItem title="Our Work" link="/work" colorInvert={colorInvert} />

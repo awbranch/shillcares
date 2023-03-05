@@ -13,32 +13,16 @@ const Menu = [
     href: '/',
   },
   {
-    name: 'Services',
-    href: '/services',
+    name: 'Our Work',
+    href: '/work',
   },
   {
-    name: 'Theory',
-    href: '/theory',
-  },
-  {
-    name: 'About',
+    name: 'About Us',
     href: '/about',
   },
   {
-    name: 'Appointments',
-    href: '/appointments',
-  },
-  {
-    name: 'Testimonials',
-    href: '/#testimonials',
-  },
-  {
-    name: 'Questions',
-    href: '/appointments#questions',
-  },
-  {
-    name: 'Contact',
-    href: '/about#contact',
+    name: 'Contact Us',
+    href: '/contact',
   },
 ];
 

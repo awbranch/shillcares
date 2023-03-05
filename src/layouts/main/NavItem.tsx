@@ -26,11 +26,6 @@ const NavItem = ({ title, link, colorInvert }: Props): JSX.Element => {
           underline={hasActiveLink ? 'always' : 'hover'}
           component="a"
           color={linkColor}
-          sx={{
-            fontSize: '1rem',
-            fontWeight: 400,
-            textDecorationThickness: '2px',
-          }}
         >
           <Typography variant="h4" component="span">
             {title}

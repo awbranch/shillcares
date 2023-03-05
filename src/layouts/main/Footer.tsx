@@ -23,7 +23,7 @@ const Footer = (): JSX.Element => {
             <Box
               component={'img'}
               src={'/logo-lite.svg'}
-              width={{ xs: 220, sm: 280, textAlign: 'center' }}
+              width={{ xs: 200, textAlign: 'center' }}
             />
           </Box>
         </NextLink>
