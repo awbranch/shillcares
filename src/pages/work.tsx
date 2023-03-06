@@ -11,9 +11,7 @@ const Work: NextPage = ({}: Props) => {
   return (
     <Main>
       <Container>
-        <Typography variant="h2" component="h1">
-          Our Work
-        </Typography>
+        <Typography variant="h1">Our Work</Typography>
         <Typography variant="subtitle1" sx={{ mt: 3 }}>
           We work with organizations in the Rochester and Finger Lakes areas of
           New York that are lorem ipsum dolor sit amet, consectetur adipiscing
