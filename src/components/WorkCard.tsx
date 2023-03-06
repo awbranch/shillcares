@@ -2,56 +2,51 @@ import React from 'react';
 import NextLink from 'next/link';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
 interface Props {
-  orientation: 'left' | 'right';
   image: string;
-  label: string;
+  organization: string;
   link: string;
   children: React.ReactNode;
 }
 
-const HighlightCard = ({
-  orientation,
+const WorkCard = ({
   image,
-  label,
+  organization,
   link,
   children,
 }: Props): JSX.Element => (
   <Stack
     direction={{
       xs: 'column',
-      md: orientation == 'left' ? 'row' : 'row-reverse',
+      sm: 'row',
     }}
-    alignItems={{ xs: 'left', md: 'center' }}
-    justifyContent={'flex-start'}
-    spacing={{ xs: 1, md: 6 }}
+    spacing={4}
   >
-    <Box flex={1}>
+    <Box sx={{ mx: { xs: 'auto', sm: 0 } }}>
       <NextLink href={link} passHref>
         <Link component={'a'}>
           <Box
             component={'img'}
-            width={1}
-            height={1}
+            width={{ xs: '180px', md: '200px' }}
             src={image}
-            alt={label}
-            sx={{ borderRadius: '10px' }}
+            alt={organization}
           />
         </Link>
       </NextLink>
     </Box>
-    <Box flex={1} sx={{ px: { xs: 1, md: 0 } }}>
-      <Typography variant={'body1'}>{children}</Typography>
-      <Box sx={{ mt: 2 }}>
+    <Box sx={{ px: { xs: 1, md: 0 } }}>
+      {children}
+      <Box sx={{ mt: 3 }}>
         <NextLink href={link} passHref>
-          <Link underline={'hover'}>{label}</Link>
+          <Link
+            underline={'hover'}
+          >{`Find out more about ${organization}`}</Link>
         </NextLink>
       </Box>
     </Box>
   </Stack>
 );
 
-export default HighlightCard;
+export default WorkCard;

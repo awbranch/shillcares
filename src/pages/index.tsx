@@ -4,7 +4,6 @@ import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-
 import HighlightCard from 'components/HighlightCard';
 
 const Home: NextPage = () => {
@@ -30,37 +29,34 @@ const Home: NextPage = () => {
         >
           <HighlightCard
             orientation={'left'}
-            image={'highlight.png'}
-            text={
-              'We support charities that are working to end the cycle of violence ' +
-              'and provide opportunities for success within our communities'
-            }
+            image={'image-4x3.png'}
             label={'Find out more about our work'}
             link={'/work'}
-          />
+          >
+            We support charities that are working to end the cycle of violence
+            and provide opportunities for success within our communities.
+          </HighlightCard>
 
           <HighlightCard
             orientation={'right'}
-            image={'highlight.png'}
-            text={
-              'Founded in 2022 the Molly and Ed Shill Cares Foundation was ' +
-              'established to help charities in New York’s Monroe and Ontario ' +
-              'counties. '
-            }
+            image={'image-4x3.png'}
             label={'Find out more about us'}
             link={'/about'}
-          />
+          >
+            Founded in 2022 the Molly and Ed Shill Cares Foundation was
+            established to help charities in New York’s Monroe and Ontario
+            counties.
+          </HighlightCard>
 
           <HighlightCard
             orientation={'left'}
-            image={'highlight.png'}
-            text={
-              'We are interested to hear your ideas about new ways we can help ' +
-              'our community.'
-            }
+            image={'image-4x3.png'}
             label={'Please contact us'}
             link={'/contact'}
-          />
+          >
+            We are interested to hear your ideas about new ways we can help our
+            community.
+          </HighlightCard>
         </Stack>
       </Container>
     </Main>
