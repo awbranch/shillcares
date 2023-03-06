@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
 
@@ -13,17 +15,14 @@ const About: NextPage = ({}: Props) => {
           About Us
         </Typography>
 
-        <Typography variant="body1" paragraph sx={{ mt: 3 }}>
+        <Typography variant="subtitle1" sx={{ mt: 3 }} paragraph>
           The Molly and Ed Shill Cares foundation was founded in 2022 with a
-          goal of unde omnis iste natus error sit voluptatem.
-        </Typography>
-
-        <Typography variant="body1" paragraph>
-          Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-          qui ratione voluptatem sequi nesciunt.
+          goal of unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+          inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
+          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+          voluptatem sequi nesciunt.
         </Typography>
 
         <Typography variant="body1" paragraph>
@@ -34,7 +33,7 @@ const About: NextPage = ({}: Props) => {
           suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
           autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
           nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-          voluptas nulla pariatur?
+          voluptas nulla pariatur?{' '}
         </Typography>
 
         <Typography variant="body1" paragraph>
@@ -52,6 +51,35 @@ const About: NextPage = ({}: Props) => {
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur?
         </Typography>
+      </Container>
+      <Box sx={{ backgroundColor: 'primary.dark' }}>
+        <Container sx={{ color: 'white' }}>
+          <Typography variant="h2">Foundation Facts</Typography>
+          <Stack direction={'row'} spacing={10}>
+            <Box>
+              <Typography
+                variant="h1"
+                component="h3"
+                sx={{ fontSize: '20rem' }}
+              >
+                8
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h1" component="h3">
+                0.7m
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="h1" component="h3">
+                5m
+              </Typography>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+      <Container>
+        <Typography variant="h2">Governance</Typography>
       </Container>
     </Main>
   );
