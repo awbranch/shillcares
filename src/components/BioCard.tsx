@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 
 interface Props {
   name: string;
-  title: string;
+  title?: string;
   image: string;
   children: React.ReactNode;
 }
@@ -18,21 +18,19 @@ const BioCard = ({ name, title, image, children }: Props): JSX.Element => (
     }}
     spacing={4}
   >
-    <Box>
+    <Box sx={{ mx: { xs: 'auto', sm: 0 } }}>
       <Box
         component={'img'}
-        width={'300px'}
+        width={{ xs: '220px', md: '280px' }}
         src={image}
-        alt={`${name} - ${title}`}
+        alt={`${name} ${title ? ' - ' + title : ''} - Shill Cares Foundation`}
       />
     </Box>
-    <Stack direction={'column'}>
-      <Typography variant="h3" sx={{ pt: 2 }}>
-        {name}
-      </Typography>
-      <Typography variant="h4">{title}</Typography>
-      {children}
-    </Stack>
+    <Box sx={{ px: { xs: 1, md: 0 } }}>
+      <Typography variant="h3">{name}</Typography>
+      {title && <Typography variant="body2">{title}</Typography>}
+      <Box sx={{ mt: 2 }}>{children}</Box>
+    </Box>
   </Stack>
 );
 

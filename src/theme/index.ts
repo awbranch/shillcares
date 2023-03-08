@@ -14,18 +14,18 @@ const getTheme = (): Theme =>
         h1: {
           fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
-          fontSize: '3.3rem',
+          fontSize: '3.4rem',
           lineHeight: 1.3,
         },
         h2: {
           fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
-          fontSize: '2.8rem',
+          fontSize: '2.6rem',
         },
         h3: {
           fontFamily: 'Source Serif Pro, serif',
           fontWeight: 600,
-          fontSize: '1.25rem',
+          fontSize: '1.8rem',
         },
         h4: {
           fontFamily: 'Noto Sans, serif',
@@ -35,18 +35,23 @@ const getTheme = (): Theme =>
         subtitle1: {
           fontFamily: 'Source Serif Pro, serif',
           fontWeight: 400,
-          lineHeight: 1.4,
-          fontSize: '1.8rem',
+          fontSize: '1.375rem',
+        },
+        subtitle2: {
+          fontFamily: 'Noto Sans, serif',
+          fontWeight: 400,
+          textTransform: 'uppercase',
+          fontSize: '0.8125rem',
         },
         body1: {
-          fontFamily: 'Source Serif Pro',
+          fontFamily: 'Source Serif Pro, serif',
           fontWeight: 400,
-          fontSize: '1.3rem',
+          fontSize: '1.125rem',
         },
         body2: {
-          fontFamily: 'Noto Serif, serif',
-          fontWeight: 500,
-          fontSize: '0.875rem',
+          fontFamily: 'Source Serif Pro, serif',
+          fontWeight: 400,
+          fontSize: '0.9333rem',
         },
         button: {
           textTransform: 'none',
@@ -64,7 +69,7 @@ const getTheme = (): Theme =>
             root: {
               fontFamily: 'Noto Sans, serif',
               fontWeight: 500,
-              fontSize: '1.1rem',
+              fontSize: '1rem',
             },
           } as ComponentsOverrides['MuiLink'],
         },
