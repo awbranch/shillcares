@@ -39,7 +39,7 @@ const Home: NextPage = () => {
 
           <HighlightCard
             orientation={'right'}
-            image={'image-4x3.png'}
+            image={'molly-ed.jpg'}
             label={'Find out more about us'}
             link={'/about'}
           >

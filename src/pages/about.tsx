@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from 'components/Container';
 import BioCard from 'components/BioCard';
 import SimpleList from 'components/SimpleList';
+import Facts from 'components/Facts';
 import React from 'react';
 
 interface Props {}
@@ -50,32 +50,7 @@ const About: NextPage = ({}: Props) => {
           qui dolorem eum fugiat quo voluptas nulla pariatur?
         </Typography>
       </Container>
-      <Box sx={{ backgroundColor: 'primary.dark' }}>
-        <Container sx={{ color: 'white' }}>
-          <Typography variant="h2">Foundation Facts</Typography>
-          <Stack direction={'row'} spacing={10}>
-            <Box>
-              <Typography
-                variant="h1"
-                component="h3"
-                sx={{ fontSize: '20rem' }}
-              >
-                8
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="h1" component="h3">
-                0.7m
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="h1" component="h3">
-                5m
-              </Typography>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
+      <Facts grants="8" totalGranted="0.7m" endowment="5m" />
       <Container>
         <Typography variant="h2">Governance</Typography>
 
@@ -83,7 +58,7 @@ const About: NextPage = ({}: Props) => {
           <BioCard
             name={'Molly Shill'}
             title={'President / Secretary'}
-            image={'image-1x1.png'}
+            image={'molly-headshot.jpg'}
           >
             <Typography variant={'body1'} paragraph>
               Molly is passionate about caring for others and making the world a
@@ -138,7 +113,7 @@ const About: NextPage = ({}: Props) => {
           <BioCard
             name={'Ed Shill'}
             title={'Vice President / Treasurer'}
-            image={'image-1x1.png'}
+            image={'ed-headshot.jpg'}
           >
             <Typography variant={'body1'} paragraph>
               A self-proclaimed workaholic and economics junkie, co-founder and
@@ -187,7 +162,7 @@ const About: NextPage = ({}: Props) => {
               ]}
             />
           </BioCard>
-          <BioCard name={'Andrew Branch'} image={'image-1x1.png'}>
+          <BioCard name={'Andrew Branch'} image={'andrew-headshot.jpg'}>
             <Typography variant={'body1'} paragraph>
               Andrew started his career at Xerox and has worked at several tech
               startups in Rochester and Silicon Valley. Andrew is passionate

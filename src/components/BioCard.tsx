@@ -13,15 +13,15 @@ interface Props {
 const BioCard = ({ name, title, image, children }: Props): JSX.Element => (
   <Stack
     direction={{
-      xs: 'column',
-      sm: 'row',
+      sm: 'column',
+      md: 'row',
     }}
     spacing={4}
   >
-    <Box sx={{ mx: { xs: 'auto', sm: 0 } }}>
+    <Box>
       <Box
         component={'img'}
-        width={{ xs: '220px', md: '280px' }}
+        width={{ xs: '320px' }}
         src={image}
         alt={`${name} ${title ? ' - ' + title : ''} - Shill Cares Foundation`}
       />
