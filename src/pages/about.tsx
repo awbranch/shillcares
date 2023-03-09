@@ -192,7 +192,7 @@ const About: NextPage = ({}: Props) => {
               Andrew started his career at Xerox and has worked at several tech
               startups in Rochester and Silicon Valley. Andrew is passionate
               about using technology, innovation, and design to build products
-              that positively impact people&amp;s lives.
+              that positively impact people&apos;s lives.
             </Typography>
             <Typography variant={'body1'} paragraph>
               He is currently the Director of Product Engineering at Measures

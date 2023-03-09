@@ -34,23 +34,23 @@ const getTheme = (): Theme =>
         },
         subtitle1: {
           fontFamily: 'Source Serif Pro, serif',
-          fontWeight: 400,
+          fontWeight: 500,
           fontSize: '1.375rem',
         },
         subtitle2: {
           fontFamily: 'Noto Sans, serif',
-          fontWeight: 400,
+          fontWeight: 500,
           textTransform: 'uppercase',
           fontSize: '0.8125rem',
         },
         body1: {
           fontFamily: 'Source Serif Pro, serif',
-          fontWeight: 400,
+          fontWeight: 500,
           fontSize: '1.125rem',
         },
         body2: {
           fontFamily: 'Source Serif Pro, serif',
-          fontWeight: 400,
+          fontWeight: 500,
           fontSize: '0.9333rem',
         },
         button: {
