@@ -14,11 +14,18 @@ const Fact = ({ value, label }: FactProps): JSX.Element => (
     <Typography
       variant="h4"
       component="div"
-      sx={{ fontSize: '5.5rem', lineHeight: '6.5rem' }}
+      sx={{
+        fontSize: { xs: '3.0rem', sm: '4.25rem', md: '5.5rem' },
+        lineHeight: { xs: '4.0rem', sm: '5.25rem', md: '6.5rem' },
+      }}
     >
       {value}
     </Typography>
-    <Typography variant="h4" component="div" sx={{ fontSize: '1.2rem' }}>
+    <Typography
+      variant="h4"
+      component="div"
+      sx={{ fontSize: { xs: '0.9rem', md: '1.2rem' } }}
+    >
       {label}
     </Typography>
   </Stack>
@@ -38,12 +45,7 @@ const Facts = ({
   <Box sx={{ backgroundColor: 'primary.dark' }}>
     <Container sx={{ color: 'white' }}>
       <Typography variant="h2">Foundation Facts</Typography>
-      <Stack
-        direction="row"
-        spacing={10}
-        justifyContent="space-around"
-        sx={{ mt: 1 }}
-      >
+      <Stack direction="row" justifyContent="space-around" sx={{ mt: 1 }}>
         <Fact value={grants} label={'Grants Awarded'} />
         <Fact value={totalGranted} label={'Total Granted'} />
         <Fact value={endowment} label={'Endowment'} />

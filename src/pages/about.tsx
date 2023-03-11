@@ -7,6 +7,7 @@ import BioCard from 'components/BioCard';
 import SimpleList from 'components/SimpleList';
 import Facts from 'components/Facts';
 import React from 'react';
+import Box from '@mui/material/Box';
 
 interface Props {}
 
@@ -50,7 +51,9 @@ const About: NextPage = ({}: Props) => {
           qui dolorem eum fugiat quo voluptas nulla pariatur?
         </Typography>
       </Container>
-      <Facts grants="8" totalGranted="0.7m" endowment="5m" />
+      <Box sx={{ mt: 3, mb: 6 }}>
+        <Facts grants="8" totalGranted="0.7m" endowment="5m" />
+      </Box>
       <Container>
         <Typography variant="h2">Governance</Typography>
 
