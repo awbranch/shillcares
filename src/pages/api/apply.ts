@@ -5,6 +5,7 @@ import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmai
 import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmationEmail';
 import applicationSchema from 'utils/applicationFormSchema';
 import path from 'path';
+import { sleep } from '../../utils/utils';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -29,6 +30,10 @@ const handler = async (req, res) => {
         res.status(500).send({ message: 'Invalid Application' });
         return;
       }
+
+      await sleep(2);
+
+      /*
 
       console.log(JSON.stringify(application, null, 3));
       let logoId = 'email-header@shillcares.org';
@@ -92,10 +97,12 @@ const handler = async (req, res) => {
         )} rejected: ${JSON.stringify(status.rejected)}`,
       );
 
+      */
+
       res.status(200).json({ message: 'Application Submitted Successfully' });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: 'Error Submitting Application' });
+      res.status(500).send({ message: error.message });
     }
   } else {
     res.status(405).send({ message: `Invalid Method: ${req.method}` });

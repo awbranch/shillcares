@@ -8,23 +8,27 @@ interface Props {
   onCancel: () => void;
   onRetry: () => void;
   message: string;
+  error: string;
 }
 
-const ErrorMessage = ({ onCancel, onRetry, message }: Props): JSX.Element => {
+const ErrorMessage = ({
+  onCancel,
+  onRetry,
+  message,
+  error,
+}: Props): JSX.Element => {
   return (
     <Box>
-      <Typography variant="h1">Error Submitting Application</Typography>
-      <Typography variant="body1" paragraph>
-        We apologize, but there was an error when attempting to submit your
-        application to the server.
+      <Typography variant={'h1'}>Error</Typography>
+      <Typography variant="subtitle1" paragraph>
+        {message}
       </Typography>
       <Typography variant="body1" paragraph>
-        {message}
+        {error}
       </Typography>
 
       <Stack direction="row" spacing={2} sx={{ mt: 5 }}>
         <Button
-          sx={{ height: 54, minWidth: 150 }}
           component={'a'}
           variant="contained"
           color="primary"
@@ -35,8 +39,6 @@ const ErrorMessage = ({ onCancel, onRetry, message }: Props): JSX.Element => {
         </Button>
 
         <Button
-          sx={{ minWidth: 150 }}
-          component={'a'}
           variant="outlined"
           color="primary"
           size="large"

@@ -4,13 +4,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import PropagateLoader from 'react-spinners/PropagateLoader';
 
-const ProcessingMessage = (): JSX.Element => {
+interface Props {
+  message: string;
+}
+
+const ProcessingMessage = ({ message }: Props): JSX.Element => {
   const theme = useTheme();
 
   return (
     <Box>
-      <Typography variant="h1">
-        Your application is being submitted, please wait...
+      <Typography variant={'h1'}>Please Wait</Typography>
+      <Typography variant="subtitle1" paragraph>
+        {message}
       </Typography>
       <Box
         sx={{

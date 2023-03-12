@@ -1,21 +1,23 @@
 import type { NextPage } from 'next';
-import Simple from 'layouts/simple/Simple';
+import Main from 'layouts/main/Main';
 import Container from 'components/Container';
-import ApplyForm from 'components/applyForm/ApplyForm';
+import ApplyForm from 'components/forms/ApplyForm';
 import path from 'path';
 import { promises as fs } from 'fs';
+import Typography from '@mui/material/Typography';
+import React from 'react';
 
 interface Props {
   application?: GrantApplication;
 }
 
-const Home: NextPage = ({ application }: Props) => {
+const Apply: NextPage = ({ application }: Props) => {
   return (
-    <Simple>
+    <Main>
       <Container>
         <ApplyForm application={application} />
       </Container>
-    </Simple>
+    </Main>
   );
 };
 
@@ -31,4 +33,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default Home;
+export default Apply;

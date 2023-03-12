@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
-import Form from './components/Form';
-import ErrorMessage from './components/ErrorMessage';
-import ProcessingMessage from './components/ProcessingMessage';
-import SuccessMessage from './components/SuccessMessage';
+import { useRouter } from 'next/router';
+import ProcessingMessage from './ProcessingMessage';
+import ErrorMessage from './ErrorMessage';
+import SuccessMessage from './SuccessMessage';
+import globals from '../../../utils/globals';
 
 type Status = 'start' | 'processing' | 'ok' | 'error';
 
 interface Props {
-  application?: GrantApplication;
+  endpoint: string;
+  prop2: boolean;
+  children: React.ReactNode;
 }
 
-const ApplyForm = ({ application }: Props): JSX.Element => {
+const FormController = ({ endpoint, prop2, children }: Props): JSX.Element => {
   const router = useRouter();
   const [status, setStatus] = useState<Status>('start');
   const [statusMessage, setStatusMessage] = useState('');
@@ -25,9 +27,9 @@ const ApplyForm = ({ application }: Props): JSX.Element => {
     await router.push('/');
   };
 
-  const onSubmit = async (values: GrantApplication) => {
+  const onSubmit = async (values: object) => {
     setStatus('processing');
-    let res = await fetch('/api/apply', {
+    let res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(values),
@@ -49,21 +51,27 @@ const ApplyForm = ({ application }: Props): JSX.Element => {
   };
 
   return (
-    <Box maxWidth={600} margin={'0 auto'}>
+    <Box maxWidth={800} margin={'0 auto'}>
       <Box>
         <Box sx={{ display: status === 'start' ? 'block' : 'none' }}>
-          <Form application={application} onSubmit={onSubmit} />
+          {children}
         </Box>
         {status === 'processing' ? (
-          <ProcessingMessage />
+          <ProcessingMessage message="Sending" />
         ) : status === 'error' ? (
           <ErrorMessage
-            message={statusMessage}
+            message="Error"
+            error={statusMessage}
             onRetry={onRetry}
             onCancel={onCancel}
           />
         ) : status === 'ok' ? (
-          <SuccessMessage />
+          <SuccessMessage
+            title={'Title'}
+            message={'Message'}
+            message2={'Message2'}
+            onClose={onCancel}
+          />
         ) : (
           <></>
         )}
@@ -72,4 +80,4 @@ const ApplyForm = ({ application }: Props): JSX.Element => {
   );
 };
 
-export default ApplyForm;
+export default FormController;

@@ -4,10 +4,12 @@ import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import React from 'react';
-import NextLink from 'next/link';
 import Stack from '@mui/material/Stack';
+import getTheme from 'theme';
 
 const Home: NextPage = () => {
+  const theme = getTheme();
+  console.log(theme);
   return (
     <Main>
       <Container>
@@ -20,9 +22,9 @@ const Home: NextPage = () => {
           <Typography variant="subtitle2">Subtitle 2</Typography>
           <Typography variant="body1">body1</Typography>
           <Typography variant="body2">body2</Typography>
-          <NextLink href="#" passHref>
-            <Link>Hyperlink</Link>
-          </NextLink>
+          <Typography variant="caption">caption</Typography>
+
+          <Link>Hyperlink</Link>
         </Stack>
       </Container>
     </Main>
