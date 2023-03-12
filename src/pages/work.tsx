@@ -22,26 +22,37 @@ const Work: NextPage = ({}: Props) => {
           <WorkCard
             image={'work/lollypop.png'}
             organization={'Lollypop Farm'}
-            link={'https://www.lollypop.org/'}
+            link={'https://www.lollypop.org/get-involved/'}
           >
             <Typography variant="body1" paragraph>
-              <strong>Lollypop Farm:</strong> Sed ut perspiciatis unde omnis
-              iste natus error sit voluptatem accusantium doloremque laudantium,
-              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
-              quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-              ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-              sed quia consequuntur magni dolores eos qui ratione voluptatem
-              sequi nesciunt.
+              <strong>Lollypop Farm:</strong> Lollypop Farm, the Humane Society
+              of Greater Rochester, has been helping animals and people since
+              1873. Support from the community enables around 115 staff members
+              and more than 800 volunteers to care for approximately 10,000
+              animals each year and makes various possible programs to address
+              issues that contribute to the surrender of unwanted animals.
             </Typography>
             <Typography variant="body1" paragraph>
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-              consectetur, adipisci velit, sed quia non numquam eius modi
-              tempora incidunt ut labore et dolore magnam aliquam quaerat
-              voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-              ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-              consequatur? Quis autem vel eum iure reprehenderit qui in ea
-              voluptate velit esse quam nihil molestiae consequatur, vel illum
-              qui dolorem eum fugiat quo voluptas nulla pariatur?
+              Lollypop is not your typical animal welfare shelter. They work to
+              build a just and compassionate world for all animals. They help to
+              save animals from abuse and suffering through justice, prevention,
+              and life-saving care. With a main campus in Fairport and three
+              other adoption centers throughout the community, the organization
+              provides shelter, care, and adoption for dogs, cats, small
+              animals, birds, reptiles, horses, and other farm animals.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Long-time animal lovers Molly and Ed took on the role of Co-Chairs
+              for the “Kindness for All Kind” campaign at Lollypop Farm. This
+              fundraising initiative will address the needs of the ever-changing
+              landscape in animal welfare. The MESCF kicked off the campaign
+              with a donation to commit to the welfare of animals who have no
+              voice.
+            </Typography>
+            <Typography variant="body1" paragraph>
+              There are many ways to help support animals at Lollypop Farm.
+              Donations of funds, supplies, or volunteer hours make a real
+              difference in the lives of pets in need in our community.
             </Typography>
           </WorkCard>
           <WorkCard
