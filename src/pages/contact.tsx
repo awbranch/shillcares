@@ -2,19 +2,31 @@ import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
+import FormController from 'components/forms/FormController';
 import ContactForm from 'components/forms/ContactForm';
 import path from 'path';
 import { promises as fs } from 'fs';
 
 interface Props {
-  contactInfo: ContactInfo;
+  contactInfo?: ContactInfo;
 }
 
 const Contact: NextPage = ({ contactInfo }: Props) => {
   return (
     <Main>
       <Container>
-        <ContactForm contactInfo={contactInfo} />
+        <Typography variant={'h1'}>Contact Us</Typography>
+        <Typography variant="subtitle1" sx={{ mt: 3, mb: 6 }} paragraph>
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+        </Typography>
+
+        <FormController
+          endPoint={'api/contact'}
+          formType={ContactForm}
+          defaultData={contactInfo}
+        />
       </Container>
     </Main>
   );

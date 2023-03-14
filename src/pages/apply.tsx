@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
+import Typography from '@mui/material/Typography';
+import FormController from 'components/forms/FormController';
 import ApplyForm from 'components/forms/ApplyForm';
 import path from 'path';
 import { promises as fs } from 'fs';
-import Typography from '@mui/material/Typography';
-import React from 'react';
 
 interface Props {
   application?: GrantApplication;
@@ -15,7 +15,20 @@ const Apply: NextPage = ({ application }: Props) => {
   return (
     <Main>
       <Container>
-        <ApplyForm application={application} />
+        <Typography variant={'h1'}>Grant Application</Typography>
+        <Typography variant="subtitle1" sx={{ mt: 3, mb: 6 }} paragraph>
+          The Molly and Ed Shill Cares Foundation funds organizations that
+          provide food, shelter, reduce violence and provide opportunities for
+          success in New York&apos;s Monroe and Ontario counties. If your
+          organization aligns with this mission, please complete this form and
+          provide details on your request.
+        </Typography>
+
+        <FormController
+          endPoint={'api/apply'}
+          formType={ApplyForm}
+          defaultData={application}
+        />
       </Container>
     </Main>
   );
