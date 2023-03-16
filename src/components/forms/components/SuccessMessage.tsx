@@ -2,33 +2,24 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import globals from 'utils/globals';
 
 interface Props {
-  title: string;
   message: string;
-  message2?: string;
   onClose: () => void;
 }
 
-const SuccessMessage = ({
-  title,
-  message,
-  message2,
-  onClose,
-}: Props): JSX.Element => {
+const SuccessMessage = ({ message, onClose }: Props): JSX.Element => {
   return (
     <Box>
-      <Typography variant="h1">{title}</Typography>
       <Typography variant="body1" paragraph>
         {message}
       </Typography>
-      {message2 && (
-        <Typography variant="body2" paragraph>
-          {message2}
-        </Typography>
-      )}
+      <Typography variant="body2" paragraph>
+        {globals.FOUNDATION_DISCLAIMER}
+      </Typography>
 
-      <Box sx={{ mt: 5, textAlign: 'center' }}>
+      <Box sx={{ mt: 5 }}>
         <Button
           variant="contained"
           color="primary"

@@ -5,26 +5,14 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 interface Props {
-  onCancel: () => void;
   onRetry: () => void;
-  message: string;
-  error: string;
 }
 
-const ErrorMessage = ({
-  onCancel,
-  onRetry,
-  message,
-  error,
-}: Props): JSX.Element => {
+const ErrorMessage = ({ onRetry }: Props): JSX.Element => {
   return (
     <Box>
-      <Typography variant={'h1'}>Error</Typography>
       <Typography variant="subtitle1" paragraph>
-        {message}
-      </Typography>
-      <Typography variant="body1" paragraph>
-        {error}
+        We apologize, but there was an error attempting to contact our server.
       </Typography>
 
       <Stack direction="row" spacing={2} sx={{ mt: 5 }}>
@@ -36,15 +24,6 @@ const ErrorMessage = ({
           onClick={onRetry}
         >
           Retry
-        </Button>
-
-        <Button
-          variant="outlined"
-          color="primary"
-          size="large"
-          onClick={onCancel}
-        >
-          Cancel
         </Button>
       </Stack>
     </Box>

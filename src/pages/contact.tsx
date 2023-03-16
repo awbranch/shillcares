@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
-import FormController from 'components/forms/FormController';
 import ContactForm from 'components/forms/ContactForm';
 import path from 'path';
 import { promises as fs } from 'fs';
@@ -21,12 +20,7 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
           consectetur, adipisci velit, sed quia non numquam eius modi tempora
           incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
         </Typography>
-
-        <FormController
-          endPoint={'api/contact'}
-          formType={ContactForm}
-          defaultData={contactInfo}
-        />
+        <ContactForm contactInfo={contactInfo} />
       </Container>
     </Main>
   );

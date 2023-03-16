@@ -5,7 +5,6 @@ import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmai
 import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmationEmail';
 import applicationSchema from 'utils/applicationFormSchema';
 import path from 'path';
-import { sleep } from '../../utils/utils';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -31,18 +30,14 @@ const handler = async (req, res) => {
         return;
       }
 
-      await sleep(2);
-
-      /*
-
       console.log(JSON.stringify(application, null, 3));
       let logoId = 'email-header@shillcares.org';
       let logoPath = path.resolve('./public');
 
       // Send an email to the foundation
       let status = await transporter.sendMail({
-        from: process.env.APPLICATION_FROM,
-        to: process.env.APPLICATION_TO,
+        from: process.env.EMAIL_FROM,
+        to: process.env.EMAIL_TO,
         subject: 'Shill Cares Grant Application',
         html: ReactDOMServer.renderToString(
           React.createElement(ApplicationSubmittedEmail, {
@@ -70,7 +65,7 @@ const handler = async (req, res) => {
 
       // Send confirmation email to the submitter
       status = await transporter.sendMail({
-        from: process.env.APPLICATION_FROM,
+        from: process.env.EMAIL_FROM,
         to: application.contactEmail || application.directorEmail,
         subject: 'Molly & Ed Shill Cares - Grant Application Received',
         html: ReactDOMServer.renderToString(
@@ -97,12 +92,10 @@ const handler = async (req, res) => {
         )} rejected: ${JSON.stringify(status.rejected)}`,
       );
 
-      */
-
       res.status(200).json({ message: 'Application Submitted Successfully' });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: error.message });
+      res.status(500).send({ message: 'System Error' });
     }
   } else {
     res.status(405).send({ message: `Invalid Method: ${req.method}` });

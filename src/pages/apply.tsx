@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
-import FormController from 'components/forms/FormController';
 import ApplyForm from 'components/forms/ApplyForm';
 import path from 'path';
 import { promises as fs } from 'fs';
@@ -23,12 +22,7 @@ const Apply: NextPage = ({ application }: Props) => {
           organization aligns with this mission, please complete this form and
           provide details on your request.
         </Typography>
-
-        <FormController
-          endPoint={'api/apply'}
-          formType={ApplyForm}
-          defaultData={application}
-        />
+        <ApplyForm application={application} />
       </Container>
     </Main>
   );
