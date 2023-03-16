@@ -1,9 +1,9 @@
 import nodemailer from 'nodemailer';
 import React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmail';
-import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmationEmail';
-import applicationSchema from 'utils/applicationFormSchema';
+import MessageSubmittedEmail from 'components/email/MessageSubmittedEmail';
+import MessageConfirmationEmail from 'components/email/MessageConfirmationEmail';
+import contactFormSchema from 'utils/contactFormSchema';
 import path from 'path';
 
 const transporter = nodemailer.createTransport({
@@ -19,18 +19,18 @@ const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
       // Revalidate what was submitted
-      let application = await applicationSchema.validate(req.body, {
+      let contactInfo = await contactFormSchema.validate(req.body, {
         abortEarly: true,
         stripUnknown: true,
       });
 
       // Check the honeypot it must be blank
-      if (application.accounting.length !== 0) {
-        res.status(500).send({ message: 'Invalid Application' });
+      if (contactInfo.accounting.length !== 0) {
+        res.status(500).send({ message: 'Invalid Message' });
         return;
       }
 
-      console.log(JSON.stringify(application, null, 3));
+      console.log(JSON.stringify(contactInfo, null, 3));
       let logoId = 'email-header@shillcares.org';
       let logoPath = path.resolve('./public');
 
@@ -38,10 +38,10 @@ const handler = async (req, res) => {
       let status = await transporter.sendMail({
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
-        subject: 'Shill Cares Grant Application',
+        subject: 'Shill Cares Contact Us Message',
         html: ReactDOMServer.renderToString(
-          React.createElement(ApplicationSubmittedEmail, {
-            application,
+          React.createElement(MessageSubmittedEmail, {
+            contactInfo,
             logoPath: `cid:${logoId}`,
             submitted: new Date().toLocaleDateString(),
           }),
@@ -56,7 +56,7 @@ const handler = async (req, res) => {
       });
 
       console.log(
-        `Application submitted email response: ${status.response} id: ${
+        `Message submitted email response: ${status.response} id: ${
           status.messageId
         } accepted: ${JSON.stringify(
           status.accepted,
@@ -66,11 +66,11 @@ const handler = async (req, res) => {
       // Send confirmation email to the submitter
       status = await transporter.sendMail({
         from: process.env.EMAIL_FROM,
-        to: application.contactEmail || application.directorEmail,
-        subject: 'Molly & Ed Shill Cares - Grant Application Received',
+        to: contactInfo.email,
+        subject: 'Molly & Ed Shill Cares - Message Received',
         html: ReactDOMServer.renderToString(
-          React.createElement(ApplicationConfirmationEmail, {
-            application,
+          React.createElement(MessageConfirmationEmail, {
+            contactInfo,
             logoPath: `cid:${logoId}`,
             submitted: new Date().toLocaleDateString(),
           }),
@@ -85,14 +85,14 @@ const handler = async (req, res) => {
       });
 
       console.log(
-        `Application confirmation email response: ${status.response} id: ${
+        `Message confirmation email response: ${status.response} id: ${
           status.messageId
         } accepted: ${JSON.stringify(
           status.accepted,
         )} rejected: ${JSON.stringify(status.rejected)}`,
       );
 
-      res.status(200).json({ message: 'Application Submitted Successfully' });
+      res.status(200).json({ message: 'Message Sent Successfully' });
     } catch (error) {
       console.error(error);
       res.status(500).send({ message: 'System Error' });

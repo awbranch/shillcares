@@ -8,22 +8,15 @@ const ProcessingMessage = (): JSX.Element => {
   const theme = useTheme();
 
   return (
-    <Box>
-      <Typography variant="h1">
-        Your application is being submitted, please wait...
+    <Box sx={{ textAlign: 'center' }}>
+      <PropagateLoader
+        color={theme.palette.primary.dark}
+        loading={true}
+        size={12}
+      />
+      <Typography variant="subtitle1" sx={{ pt: 4 }}>
+        Submitting. Please Wait.
       </Typography>
-      <Box
-        sx={{
-          textAlign: 'center',
-          paddingTop: 3,
-        }}
-      >
-        <PropagateLoader
-          color={theme.palette.primary.main}
-          loading={true}
-          size={12}
-        />
-      </Box>
     </Box>
   );
 };

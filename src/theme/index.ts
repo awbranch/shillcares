@@ -4,11 +4,12 @@ import shadows from './shadows';
 import { light, dark } from './palette';
 
 const mode = 'light';
+const palette = mode === 'light' ? light : dark;
 
 const getTheme = (): Theme =>
   responsiveFontSizes(
     createTheme({
-      palette: mode === 'light' ? light : dark,
+      palette: palette,
       shadows: shadows(mode),
       typography: {
         h1: {
@@ -53,6 +54,11 @@ const getTheme = (): Theme =>
           fontWeight: 500,
           fontSize: '0.9333rem',
         },
+        caption: {
+          fontFamily: 'Noto Sans, serif',
+          fontWeight: 400,
+          fontSize: '1rem',
+        },
         button: {
           textTransform: 'none',
           fontFamily: 'Noto Sans, serif',
@@ -88,27 +94,18 @@ const getTheme = (): Theme =>
         MuiInputBase: {
           styleOverrides: {
             root: {
-              borderRadius: 5,
-              background: 'white',
+              fontFamily: 'Noto Sans, serif',
+              fontWeight: 500,
             },
           } as ComponentsOverrides['MuiInputBase'],
         },
-        MuiOutlinedInput: {
+        MuiInputLabel: {
           styleOverrides: {
             root: {
-              borderRadius: 5,
+              fontFamily: 'Noto Sans, serif',
+              fontWeight: 400,
             },
-            input: {
-              borderRadius: 5,
-            },
-          } as ComponentsOverrides['MuiOutlinedInput'],
-        },
-        MuiCard: {
-          styleOverrides: {
-            root: {
-              borderRadius: 8,
-            },
-          } as ComponentsOverrides['MuiCard'],
+          } as ComponentsOverrides['MuiInputLabel'],
         },
       },
     }),
