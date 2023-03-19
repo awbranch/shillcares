@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from 'components/Container';
 import BioCard from 'components/BioCard';
-import SimpleList from 'components/SimpleList';
 import Facts from 'components/Facts';
 import React from 'react';
 import Box from '@mui/material/Box';
@@ -91,27 +90,6 @@ const About: NextPage = ({}: Props) => {
               topics of preventative medicine and oncology. She enjoys cooking
               and incorporating lots of vegetables!
             </Typography>
-            <Typography variant="body1">
-              <strong>Certifications:</strong>
-            </Typography>
-            <SimpleList
-              items={[
-                '2021 Certified Meditation Teacher',
-                '2012 Certified End of Life Doula',
-                '2010 Certified Yoga Instructor',
-              ]}
-            />
-            <Typography variant="body1">
-              <strong>Education:</strong>
-            </Typography>
-            <SimpleList
-              items={[
-                '2022 Doctorate in Acupuncture, Pacific College of Oriental Medicine',
-                '2000 Masters of Acupuncture, New England School of Acupuncture',
-                '1990 Masters of Community Services Administration, Alfred University',
-                '1986 BA in Business, St. Bonaventure University',
-              ]}
-            />
           </BioCard>
           <BioCard
             name={'Ed Shill'}
@@ -154,16 +132,6 @@ const About: NextPage = ({}: Props) => {
               Branch Shill, and his three children, Katie, Mike, and Matt. He
               also loves his three cats, and two horses.
             </Typography>
-            <Typography variant="body1">
-              <strong>Education:</strong>
-            </Typography>
-            <SimpleList
-              items={[
-                'MA in Economics/Finance, University Center at Binghamton.',
-                'BS in Economics/Finance, Brockport State College',
-                'AAS in Accounting',
-              ]}
-            />
           </BioCard>
           <BioCard name={'Andrew Branch'} image={'andrew-headshot.jpg'}>
             <Typography variant={'body1'} paragraph>
@@ -187,15 +155,6 @@ const About: NextPage = ({}: Props) => {
               technology, and human affairs. Today, he lives in Brighton, NY,
               with his wife, Kimberley, and daughter Helen.
             </Typography>
-            <Typography variant="body1">
-              <strong>Education:</strong>
-            </Typography>
-            <SimpleList
-              items={[
-                'MS in Computer Science, Rochester Institute of Technology',
-                'BS in Computer Science, Siena College',
-              ]}
-            />
           </BioCard>
         </Stack>
       </Container>
