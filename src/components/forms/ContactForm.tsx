@@ -70,7 +70,7 @@ const ContactForm = ({ contactInfo }: ContactFormProps): JSX.Element => {
           </Grid>
           <Grid item xs={12}>
             <TextField
-              label="SuccessMessage *"
+              label="Message *"
               multiline
               rows={10}
               variant="outlined"

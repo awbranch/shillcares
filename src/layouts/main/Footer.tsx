@@ -13,7 +13,6 @@ const Footer = (): JSX.Element => {
       <Box
         sx={{
           backgroundColor: 'primary.dark',
-          mt: 3,
           pt: 3,
           textAlign: 'center',
         }}
@@ -27,15 +26,6 @@ const Footer = (): JSX.Element => {
             />
           </Box>
         </NextLink>
-        {/*<Typography*/}
-        {/*  variant="caption"*/}
-        {/*  sx={{ display: 'block', color: 'white', py: 1 }}*/}
-        {/*>*/}
-        {/*  © {new Date().getFullYear()} Copyright Molly and Ed Shill Cares*/}
-        {/*  Foundation.*/}
-        {/*  <br />*/}
-        {/*  All rights reserved.*/}
-        {/*</Typography>*/}
       </Box>
     </Box>
   );
