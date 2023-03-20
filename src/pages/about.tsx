@@ -58,42 +58,8 @@ const About: NextPage = ({}: Props) => {
 
         <Stack direction={'column'} spacing={10} sx={{ pt: 4 }}>
           <BioCard
-            name={'Molly Shill'}
-            title={'President / Secretary'}
-            image={'molly-headshot.jpg'}
-          >
-            <Typography variant={'body1'} paragraph>
-              Molly is passionate about caring for others and making the world a
-              more peaceful and loving place.
-            </Typography>
-            <Typography variant={'body1'} paragraph>
-              For the past 22 years, Molly has run a private acupuncture
-              practice in Bushnell’s Basin. She specializes in oncology,
-              acupuncture, and preventative care. She often states that Chinese
-              Medicine is the best preventative medicine.
-            </Typography>
-            <Typography variant={'body1'} paragraph>
-              Together with her husband and family, Molly hopes to oversee the
-              Molly & Ed Shill Cares foundation&apos;s growth and help more
-              people and animals in her local community. She is also on the
-              Board of Directors for The Golisano Children’s Hospital and serves
-              as co-chair of the 2023 Lollypop Capital Campaign.
-            </Typography>
-            <Typography variant="body1">
-              <strong>Personal Life:</strong>
-            </Typography>
-            <Typography variant={'body1'} paragraph>
-              A Finger Lakes native, Molly loves living on Canandaigua Lake with
-              her husband, Ed their cats and horses. Most days, she can be seen
-              in her garden or woodland area caring for birds, plants, and pets.
-              She is also an avid reader and researcher, particularly on the
-              topics of preventative medicine and oncology. She enjoys cooking
-              and incorporating lots of vegetables!
-            </Typography>
-          </BioCard>
-          <BioCard
             name={'Ed Shill'}
-            title={'Vice President / Treasurer'}
+            title={'Founder'}
             image={'ed-headshot.jpg'}
           >
             <Typography variant={'body1'} paragraph>
@@ -133,7 +99,45 @@ const About: NextPage = ({}: Props) => {
               also loves his three cats, and two horses.
             </Typography>
           </BioCard>
-          <BioCard name={'Andrew Branch'} image={'andrew-headshot.jpg'}>
+          <BioCard
+            name={'Molly Shill'}
+            title={'President'}
+            image={'molly-headshot.jpg'}
+          >
+            <Typography variant={'body1'} paragraph>
+              Molly is passionate about caring for others and making the world a
+              more peaceful and loving place.
+            </Typography>
+            <Typography variant={'body1'} paragraph>
+              For the past 22 years, Molly has run a private acupuncture
+              practice in Bushnell’s Basin. She specializes in oncology,
+              acupuncture, and preventative care. She often states that Chinese
+              Medicine is the best preventative medicine.
+            </Typography>
+            <Typography variant={'body1'} paragraph>
+              Together with her husband and family, Molly hopes to oversee the
+              Molly & Ed Shill Cares foundation&apos;s growth and help more
+              people and animals in her local community. She is also on the
+              Board of Directors for The Golisano Children’s Hospital and serves
+              as co-chair of the 2023 Lollypop Capital Campaign.
+            </Typography>
+            <Typography variant="body1">
+              <strong>Personal Life:</strong>
+            </Typography>
+            <Typography variant={'body1'} paragraph>
+              A Finger Lakes native, Molly loves living on Canandaigua Lake with
+              her husband, Ed their cats and horses. Most days, she can be seen
+              in her garden or woodland area caring for birds, plants, and pets.
+              She is also an avid reader and researcher, particularly on the
+              topics of preventative medicine and oncology. She enjoys cooking
+              and incorporating lots of vegetables!
+            </Typography>
+          </BioCard>
+          <BioCard
+            name={'Andrew Branch'}
+            image={'andrew-headshot.jpg'}
+            title={'Vice President'}
+          >
             <Typography variant={'body1'} paragraph>
               Andrew started his career at Xerox and has worked at several tech
               startups in Rochester and Silicon Valley. Andrew is passionate
