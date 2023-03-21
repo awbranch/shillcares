@@ -58,10 +58,10 @@ const Work: NextPage = ({}: Props) => {
           <WorkCard
             image={'work/wilmont.png'}
             organization={'Wilmont Cancer Institute'}
-            link={'https://www.urmc.rochester.edu/cancer-institute.aspx'}
+            link={'www.urmc.rochester.edu/cancer-institute.aspx'}
           >
             <Typography variant="body1" paragraph>
-              <strong>Wilmont Cancer Institute:</strong> UR Medicine's Wilmot
+              <strong>Wilmont Cancer Institute:</strong> UR Medicine&apos;s
               Cancer Institute provides world-class cancer treatment and care
               and conducts pivotal research. Their goal is to prevent and
               conquer cancer through innovation in science, patient care,
@@ -84,17 +84,6 @@ const Work: NextPage = ({}: Props) => {
               Cancer will soon eclipse cardiovascular disease as the leading
               cause of death worldwide. Tomorrow’s cures are needed now.
             </Typography>
-            <Typography variant="body1" paragraph>
-              Any donation to Wilmot Cancer Center will help: Advance care and
-              access to cutting-edge clinical trials, which help identify better
-              and safer treatments for patients throughout our region. Drive new
-              discoveries by providing seed funding, which can kickstart pilot
-              projects and lead to major federal grants. Recruit and retain
-              world-class cancer researchers and clinicians and train the next
-              generation. For more information on supporting the Wilmot Cancer
-              Institute, contact Clare Flanagan, Executive Director of
-              Advancement,
-            </Typography>
           </WorkCard>
           <WorkCard
             image={'work/spcc.png'}
@@ -105,15 +94,15 @@ const Work: NextPage = ({}: Props) => {
               <strong>
                 Society for the Protection and Care of Children (SPCC):
               </strong>{' '}
-              SPCC is the country's oldest non-profit agency focused on meeting
-              the needs of children and families facing various hardships and
-              trauma. Their mission is to provide the best opportunities for a
-              bright future by respectfully partnering with children and their
-              families, advocating for their health, well-being, and safety, and
-              working to heal and strengthen relationships. SPCC provides child
-              protective services and organizes foster care for abused children.
-              Currently, they operate seven programs which together serve 7,000
-              individuals per year.
+              SPCC is the country&apos;s oldest non-profit agency focused on
+              meeting the needs of children and families facing various
+              hardships and trauma. Their mission is to provide the best
+              opportunities for a bright future by respectfully partnering with
+              children and their families, advocating for their health,
+              well-being, and safety, and working to heal and strengthen
+              relationships. SPCC provides child protective services and
+              organizes foster care for abused children. Currently, they operate
+              seven programs which together serve 7,000 individuals per year.
             </Typography>
             <Typography variant="body1" paragraph>
               MESCF recognized a need within SPCC for a Director of Development
@@ -122,20 +111,16 @@ const Work: NextPage = ({}: Props) => {
               Development would organize strategic fundraising events and
               intentionally cultivate donor relationships. Increasing
               unrestricted dollars would allow SPCC to deliver better services
-              that best meet children's needs and stabilize cash flow challenges
-              inherent in grant funding. Knowing the long-term benefit of having
-              a Director of Development, MESCF was excited and grateful to fund
-              this position's first year's salary.
+              that best meet children&apos;s needs and stabilize cash flow
+              challenges challenges inherent in grant funding. Knowing the
+              long-term benefit of having a Director of Development, MESCF was
+              excited and grateful to fund this position&apos;s first
+              year&apos;s salary.
             </Typography>
             <Typography variant="body1" paragraph>
               The needs of families in our community far outweigh available
               resources, and tangible needs often go unmet. There are many
-              creative ways to show support for children and families by
-              visiting SPCC's website below. You can show support by attending
-              future fundraising events. One can always reach out to the new
-              Director of Development to learn more about SPCC firsthand and
-              forge a relationship that would help our community's needy
-              children.
+              creative ways to show support for children and families.
             </Typography>
           </WorkCard>
           <WorkCard
@@ -203,13 +188,7 @@ const Work: NextPage = ({}: Props) => {
               There are many ways to give your time and talent to help survivors
               thrive. By supporting Willow, you are investing in the healing
               journey of survivors here in our community. With help, we can tell
-              survivors; they are not alone. On the Willow website,
-              https://willowcenterny.org/make-a-difference/, there is a Wish
-              List of urgently needed items to support survivors on their
-              journey to s safe and empowered life. There is also a link to
-              donate directly: https://willowcenterny.donordrive.com. Attending
-              a Willow event such as the gala and Spring luncheon is always
-              heartwarming to learn more about this wonderful organization.
+              survivors; they are not alone.
             </Typography>
           </WorkCard>
           <WorkCard
@@ -219,16 +198,16 @@ const Work: NextPage = ({}: Props) => {
           >
             <Typography variant="body1" paragraph>
               <strong>Golisano Children&apos;s Hospital:</strong> Sed ut
-              University of Rochester's Golisano Children's Hospital is a
-              nationally ranked, freestanding acute care children's hospital in
-              Rochester, NY. It provides safe, effective, innovative, and
-              family-centered care for children in the Central New York region.
-              The Region's only Level 1 Trauma and Burn Center offers a complete
-              range of health services for children from birth to 19 years of
-              age.
+              University of Rochester&apos;s Golisano Children&apos;s Hospital
+              is a nationally ranked, freestanding acute care children&apos;s
+              hospital in Rochester, NY. It provides safe, effective,
+              innovative, and family-centered care for children in the Central
+              New York region. The Region&apos;s only Level 1 Trauma and Burn
+              Center offers a complete range of health services for children
+              from birth to 19 years of age.
             </Typography>
             <Typography variant="body1" paragraph>
-              Molly Shill joined the Golisano Children's Hospital Board of
+              Molly Shill joined the Golisano Children&apos;s Hospital Board of
               Directors in August 2022. At their Denim and Diamonds Gala that
               year, the MESCF donated to help support their new pediatric
               immediate access walk-in center. This new center will provide
@@ -237,29 +216,16 @@ const Work: NextPage = ({}: Props) => {
               for crisis intervention.
             </Typography>
             <Typography variant="body1" paragraph>
-              Molly Shill joined the Golisano Children's Hospital Board of
-              Directors in August 2022. At their Denim and Diamonds Gala that
-              year, the MESCF donated to help support their new pediatric
-              immediate access walk-in center. This new center will provide
-              mental health emergency assessments, community-wide coordination
-              of youth family crisis services, and develop innovative practices
-              for crisis intervention.
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Golisano Children's Hospital hosts many annual events to support
-              the children they care for. For information on annual events, call
-              their Office of Advancement at (585) 273-5948. There are many
-              other ways to give to help support them on their website,
-              https://www.urmc.rochester.edu/childrens-hospital/ways-to-give.aspx,
-              including a Wish List detailing how to make a difference for
-              children in need. There is also a link to explore unique naming
-              opportunites at the hospital.
+              Golisano Children&apos;s Hospital hosts many annual events to
+              support the children they care for. For information on annual
+              events, call their Office of Advancement at (585) 273-5948. There
+              are many other ways to give to help support them.
             </Typography>
           </WorkCard>
           <WorkCard
             image={'work/meals-for-homeless.png'}
             organization={'Meals for the Homeless'}
-            link={'https://www.facebook.com/groups/351197560176136/?_rdr'}
+            link={'https://www.facebook.com/groups/351197560176136'}
           >
             <Typography variant="body1" paragraph>
               <strong>Meals for the Homeless:</strong> Meals for the Homeless is
@@ -283,23 +249,18 @@ const Work: NextPage = ({}: Props) => {
               volunteer wrote the following:
             </Typography>
             <Typography variant="body1" paragraph>
-              "We are so grateful to the Molly and Ed Shill Cares Foundation.
-              The donation of the industrial refrigerator has been life-changing
-              for our "Meals for the Homeless" Facebook Group. We are not
-              affiliated with any specific organization, just a group that wants
-              to show compassion to our homeless community members or in the
-              county's transitional housing programs. As such, we do not receive
-              government funding, only limited donations from other
-              organizations. We rely fully on volunteers! The clients here have
-              no way to cook for themselves. We are currently serving dinner to
-              about 75-80 people, with about 55 of those being children. We
-              serve dinner Monday-Thursday and give each child a lunch bag for
-              the next day."
-            </Typography>
-            <Typography variant="body1" paragraph>
-              Meals for the Homeless always looks for volunteers to prepare and
-              serve meals. Please visit their FaceBook page to see where you can
-              help out.
+              &quot;We are so grateful to the Molly and Ed Shill Cares
+              Foundation. The donation of the industrial refrigerator has been
+              life-changing for our &quot;Meals for the Homeless&quot; Facebook
+              Group. We are not affiliated with any specific organization, just
+              a group that wants to show compassion to our homeless community
+              members or in the county&apos;s transitional housing programs. As
+              such, we do not receive government funding, only limited donations
+              from other organizations. We rely fully on volunteers! The clients
+              here have no way to cook for themselves. We are currently serving
+              dinner to about 75-80 people, with about 55 of those being
+              children. We serve dinner Monday-Thursday and give each child a
+              lunch bag for the next day.&quot;
             </Typography>
           </WorkCard>
           <WorkCard
@@ -339,8 +300,7 @@ const Work: NextPage = ({}: Props) => {
               about what an excellent job Habitat for Cats is doing in our
               community. Financial donations are often used to purchase
               equipment used to trap, transport, and relocate cats rescued by
-              their team. Visit https://habitatforcats.com/HFC-Donate to learn
-              more.
+              their team.
             </Typography>
           </WorkCard>
         </Stack>
