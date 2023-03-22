@@ -13,6 +13,6 @@ export const smoothScrollTo = (id: string, offset: number): void => {
   });
 };
 
-export async function sleep(seconds) {
+export async function sleep(seconds: number) {
   return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }

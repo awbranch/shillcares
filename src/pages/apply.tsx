@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
@@ -10,7 +11,20 @@ interface Props {
   application?: GrantApplication;
 }
 
+const windowLoaded = () => {
+  console.log('Apply - Window Loaded');
+};
+
 const Apply: NextPage = ({ application }: Props) => {
+  useEffect(() => {
+    console.log('Apply - Adding window listener');
+    window.addEventListener('load', windowLoaded);
+    return () => {
+      console.log('Apply - Removing window listener');
+      window.removeEventListener('load', windowLoaded);
+    };
+  }, []);
+
   return (
     <Main>
       <Container>

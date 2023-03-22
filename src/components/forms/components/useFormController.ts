@@ -29,7 +29,7 @@ export default function useFormController(endPoint) {
       }
     } catch (err) {
       setStatus('error');
-      console.error(err.toString());
+      console.error(err);
     }
   };
 
