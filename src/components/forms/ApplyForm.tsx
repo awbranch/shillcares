@@ -10,14 +10,10 @@ import useFormController from './components/useFormController';
 import FormWrapper from './components/FormWrapper';
 import globals from 'utils/globals';
 
-interface ApplyFormProps {
-  application?: GrantApplication;
-}
-
-const ApplyForm = ({ application }: ApplyFormProps): JSX.Element => {
+const ApplyForm = (): JSX.Element => {
   const { onSubmit, onRestart, status } = useFormController('api/apply');
 
-  const initialValues = application || {
+  const initialValues = {
     accounting: '',
     organization: '',
     website: '',

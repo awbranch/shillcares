@@ -10,14 +10,10 @@ import useFormController from './components/useFormController';
 import FormWrapper from './components/FormWrapper';
 import globals from 'utils/globals';
 
-interface ContactFormProps {
-  contactInfo?: ContactInfo;
-}
-
-const ContactForm = ({ contactInfo }: ContactFormProps): JSX.Element => {
+const ContactForm = (): JSX.Element => {
   const { onSubmit, onRestart, status } = useFormController('api/contact');
 
-  const initialValues = contactInfo || {
+  const initialValues = {
     accounting: '',
     name: '',
     email: '',

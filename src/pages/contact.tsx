@@ -2,27 +2,13 @@ import type { NextPage } from 'next';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Box from '@mui/material/Box';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
+import ContactForm from 'components/forms/ContactForm';
 import Typography from '@mui/material/Typography';
 
-import path from 'path';
-import { promises as fs } from 'fs';
-import Box from '@mui/material/Box';
-import dynamic from 'next/dynamic';
-
-const DynamicContactForm = dynamic(
-  () => import('components/forms/ContactForm'),
-  {
-    ssr: false,
-  },
-);
-
-interface Props {
-  contactInfo?: ContactInfo;
-}
-
-const Contact: NextPage = ({ contactInfo }: Props) => {
+const Contact: NextPage = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
@@ -90,7 +76,7 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
                   modi tempora incidunt ut labore et dolore magnam aliquam
                   quaerat voluptatem.
                 </Typography>
-                <DynamicContactForm contactInfo={contactInfo} />
+                <ContactForm />
               </Box>
             </Container>
           </Box>
@@ -99,17 +85,4 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
     </Main>
   );
 };
-/*
-export async function getServerSideProps() {
-  let contactInfo = null;
-  if (process.env.FLAG_POPULATE_CONTACT_FORM === 'true') {
-    const file = path.join(process.cwd(), 'data', 'testContact.json');
-    contactInfo = JSON.parse(await fs.readFile(file, 'utf8'));
-  }
-
-  return {
-    props: { contactInfo },
-  };
-}
-*/
 export default Contact;

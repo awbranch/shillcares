@@ -1,20 +1,10 @@
 import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
-import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
-import path from 'path';
-import { promises as fs } from 'fs';
-import dynamic from 'next/dynamic';
+import Container from 'components/Container';
+import ApplyForm from 'components/forms/ApplyForm';
 
-const DynamicApplyForm = dynamic(() => import('components/forms/ApplyForm'), {
-  ssr: false,
-});
-
-interface Props {
-  application?: GrantApplication;
-}
-
-const Apply: NextPage = ({ application }: Props) => {
+const Apply: NextPage = () => {
   return (
     <Main>
       <Container>
@@ -26,22 +16,10 @@ const Apply: NextPage = ({ application }: Props) => {
           organization aligns with this mission, please complete this form and
           provide details on your request.
         </Typography>
-        <DynamicApplyForm application={application} />
+        <ApplyForm />
       </Container>
     </Main>
   );
 };
-
-export async function getServerSideProps() {
-  let application = null;
-  if (process.env.FLAG_POPULATE_APPLY_FORM === 'true') {
-    const file = path.join(process.cwd(), 'data', 'testApplication.json');
-    application = JSON.parse(await fs.readFile(file, 'utf8'));
-  }
-
-  return {
-    props: { application },
-  };
-}
 
 export default Apply;
