@@ -2,9 +2,13 @@ import type { NextPage } from 'next';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
-import ApplyForm from 'components/forms/ApplyForm';
 import path from 'path';
 import { promises as fs } from 'fs';
+import dynamic from 'next/dynamic';
+
+const DynamicApplyForm = dynamic(() => import('components/forms/ApplyForm'), {
+  ssr: false,
+});
 
 interface Props {
   application?: GrantApplication;
@@ -22,7 +26,7 @@ const Apply: NextPage = ({ application }: Props) => {
           organization aligns with this mission, please complete this form and
           provide details on your request.
         </Typography>
-        <ApplyForm application={application} />
+        <DynamicApplyForm application={application} />
       </Container>
     </Main>
   );

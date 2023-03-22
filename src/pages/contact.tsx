@@ -5,10 +5,18 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import Typography from '@mui/material/Typography';
-import ContactForm from 'components/forms/ContactForm';
+
 import path from 'path';
 import { promises as fs } from 'fs';
 import Box from '@mui/material/Box';
+import dynamic from 'next/dynamic';
+
+const DynamicContactForm = dynamic(
+  () => import('components/forms/ContactForm'),
+  {
+    ssr: false,
+  },
+);
 
 interface Props {
   contactInfo?: ContactInfo;
@@ -82,7 +90,7 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
                   modi tempora incidunt ut labore et dolore magnam aliquam
                   quaerat voluptatem.
                 </Typography>
-                <ContactForm contactInfo={contactInfo} />
+                <DynamicContactForm contactInfo={contactInfo} />
               </Box>
             </Container>
           </Box>
