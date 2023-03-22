@@ -43,19 +43,19 @@ const Home: NextPage = () => {
             label={'Find out more about us'}
             link={'/about'}
           >
-            Founded in 2022 the Molly and Ed Shill Cares Foundation was
-            established to help charities in New York’s Monroe and Ontario
-            counties.
+            Founded in 2022, the Molly & Ed Shill Cares Foundation was
+            established to help charities who support people and animals most
+            risk within our community.
           </HighlightCard>
 
           <HighlightCard
             orientation={'left'}
-            image={'comps/gettyimages-1203524421-170667a.jpg'}
+            image={'/comps/gettyimages-1431841394-170667a.jpg'}
             label={'Please contact us'}
             link={'/contact'}
           >
-            We are interested to hear your ideas about new ways we can help our
-            community.
+            We are interested to hear your ideas about new ways we can help
+            high-risk people and animals within our community.
           </HighlightCard>
         </Stack>
       </Container>

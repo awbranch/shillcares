@@ -44,7 +44,7 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
           component={LazyLoadImage}
           height={1}
           width={1}
-          src={'contact-side.jpg'}
+          src={'contact-side-2.jpg'}
           alt="Hearts"
           effect="blur"
           sx={{

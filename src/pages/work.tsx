@@ -13,9 +13,8 @@ const Work: NextPage = ({}: Props) => {
       <Container>
         <Typography variant="h1">Our Work</Typography>
         <Typography variant="subtitle1" sx={{ mt: 3 }}>
-          We work with organizations in the Rochester and Finger Lakes areas of
-          New York that are lorem ipsum dolor sit amet, consectetur adipiscing
-          elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+          We support charities that are working to end the cycle of violence and
+          provide opportunities for success within our communities.
         </Typography>
 
         <Stack spacing={{ xs: 15, sm: 10 }} sx={{ mt: { xs: 15, sm: 10 } }}>
@@ -58,7 +57,7 @@ const Work: NextPage = ({}: Props) => {
           <WorkCard
             image={'work/wilmont.png'}
             organization={'Wilmont Cancer Institute'}
-            link={'www.urmc.rochester.edu/cancer-institute.aspx'}
+            link={'https://www.urmc.rochester.edu/cancer-institute.aspx'}
           >
             <Typography variant="body1" paragraph>
               <strong>Wilmont Cancer Institute:</strong> UR Medicine&apos;s
@@ -69,10 +68,17 @@ const Work: NextPage = ({}: Props) => {
               the University of Rochester Medical Center system, Wilmot serves
               approximately 3 million people in a 27-county region in western
               and central New York. Established in 1974, it has a long history
-              of outstanding clinical care and research breakthroughs. The
-              Wilmot Cancer Institute leads the region in cancer treatment and
-              is internationally known for research discoveries that have
-              changed the standard of care.
+              of outstanding clinical care and{' '}
+              <a
+                href={
+                  'https://www.urmc.rochester.edu/cancer-institute/research.aspx'
+                }
+              >
+                research
+              </a>{' '}
+              breakthroughs. The Wilmot Cancer Institute leads the region in
+              cancer treatment and is internationally known for research
+              discoveries that have changed the standard of care.
             </Typography>
             <Typography variant="body1" paragraph>
               In 2022, members of the MESCF attended the Toast to Your Health
@@ -151,6 +157,10 @@ const Work: NextPage = ({}: Props) => {
               the equipment, have it installed keep on doing what they do best –
               feed our hungry.
             </Typography>
+            <Typography variant="body1" paragraph>
+              There are many ways to get involved in helping St. Peter’s
+              Kitchen, including volunteering or hosting a fundraiser.
+            </Typography>
           </WorkCard>
           <WorkCard
             image={'work/willow.png'}
@@ -158,15 +168,15 @@ const Work: NextPage = ({}: Props) => {
             link={'https://willowcenterny.org/'}
           >
             <Typography variant="body1" paragraph>
-              <strong>Willow Domestic Violence Center:</strong> Sed ut Willow
-              Domestic Violence Center is an emergency shelter providing a safe
-              haven for over 300 adults and 250 children annually. They build a
-              safer community through shelter, services, and support for
-              survivors of domestic violence and human trafficking. The mission
-              of Willow is to prevent domestic violence and ensure every
-              survivor has access to the services and support needed along the
-              journey to a safe and empowered life. Their vision is a community
-              free from domestic violence, where healthy relationships thrive.
+              <strong>Willow Domestic Violence Center:</strong> Willow Domestic
+              Violence Center is an emergency shelter providing a safe haven for
+              over 300 adults and 250 children annually. They build a safer
+              community through shelter, services, and support for survivors of
+              domestic violence and human trafficking. The mission of Willow is
+              to prevent domestic violence and ensure every survivor has access
+              to the services and support needed along the journey to a safe and
+              empowered life. Their vision is a community free from domestic
+              violence, where healthy relationships thrive.
             </Typography>
             <Typography variant="body1" paragraph>
               Willow has a 40-year history as Alternative for Battered Women
@@ -188,7 +198,7 @@ const Work: NextPage = ({}: Props) => {
               There are many ways to give your time and talent to help survivors
               thrive. By supporting Willow, you are investing in the healing
               journey of survivors here in our community. With help, we can tell
-              survivors; they are not alone.
+              survivors; <em>they are not alone</em>.
             </Typography>
           </WorkCard>
           <WorkCard
@@ -197,14 +207,14 @@ const Work: NextPage = ({}: Props) => {
             link={'https://www.urmc.rochester.edu/childrens-hospital.aspx'}
           >
             <Typography variant="body1" paragraph>
-              <strong>Golisano Children&apos;s Hospital:</strong> Sed ut
-              University of Rochester&apos;s Golisano Children&apos;s Hospital
-              is a nationally ranked, freestanding acute care children&apos;s
-              hospital in Rochester, NY. It provides safe, effective,
-              innovative, and family-centered care for children in the Central
-              New York region. The Region&apos;s only Level 1 Trauma and Burn
-              Center offers a complete range of health services for children
-              from birth to 19 years of age.
+              <strong>Golisano Children&apos;s Hospital:</strong> University of
+              Rochester&apos;s Golisano Children&apos;s Hospital is a nationally
+              ranked, freestanding acute care children&apos;s hospital in
+              Rochester, NY. It provides safe, effective, innovative, and
+              family-centered care for children in the Central New York region.
+              The Region&apos;s only Level 1 Trauma and Burn Center offers a
+              complete range of health services for children from birth to 19
+              years of age.
             </Typography>
             <Typography variant="body1" paragraph>
               Molly Shill joined the Golisano Children&apos;s Hospital Board of

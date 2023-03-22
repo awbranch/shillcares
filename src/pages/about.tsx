@@ -18,36 +18,10 @@ const About: NextPage = ({}: Props) => {
 
         <Typography variant="subtitle1" sx={{ mt: 3, mb: 2.5 }} paragraph>
           The Molly and Ed Shill Cares foundation was founded in 2022 with a
-          goal of unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-          inventore.
-        </Typography>
-
-        <Typography variant="body1" paragraph>
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci velit, sed quia non numquam eius modi tempora
-          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-          enim ad minima veniam, quis nostrum exercitationem ullam corporis
-          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-          voluptas nulla pariatur?{' '}
-        </Typography>
-
-        <Typography variant="body1" paragraph>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-          qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-          dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed
-          quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-          aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-          exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
-          ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
-          ea voluptate velit esse quam nihil molestiae consequatur, vel illum
-          qui dolorem eum fugiat quo voluptas nulla pariatur?
+          goal to help people and animals within their community have a safer
+          place to live and thrive. Their aim is to help end the cycle of
+          violence, provide opportunities for success and inspire loving
+          outcomes within their communities.
         </Typography>
       </Container>
       <Box sx={{ mt: 3, mb: 6 }}>
