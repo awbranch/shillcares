@@ -99,7 +99,7 @@ const Contact: NextPage = ({ contactInfo }: Props) => {
     </Main>
   );
 };
-
+/*
 export async function getServerSideProps() {
   let contactInfo = null;
   if (process.env.FLAG_POPULATE_CONTACT_FORM === 'true') {
@@ -111,5 +111,5 @@ export async function getServerSideProps() {
     props: { contactInfo },
   };
 }
-
+*/
 export default Contact;
