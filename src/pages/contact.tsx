@@ -71,10 +71,8 @@ const Contact: NextPage = () => {
               <Box sx={{ pl: 2 }}>
                 <Typography variant={'h1'}>Contact Us</Typography>
                 <Typography variant="subtitle1" sx={{ mt: 3, mb: 6 }} paragraph>
-                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                  amet, consectetur, adipisci velit, sed quia non numquam eius
-                  modi tempora incidunt ut labore et dolore magnam aliquam
-                  quaerat voluptatem.
+                  We are interested to hear your ideas about new ways we can
+                  help high-risk people and animals within our community.
                 </Typography>
                 <ContactForm />
               </Box>
