@@ -29,7 +29,7 @@ const WorkCard = ({
         <Link component={'a'}>
           <Box
             component={'img'}
-            width={{ xs: '180px', md: '200px' }}
+            width={{ xs: '100%', sm: '200px' }}
             src={image}
             alt={organization}
           />

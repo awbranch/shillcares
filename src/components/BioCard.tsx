@@ -21,7 +21,7 @@ const BioCard = ({ name, title, image, children }: Props): JSX.Element => (
     <Box>
       <Box
         component={'img'}
-        width={{ xs: '320px' }}
+        width={{ xs: '100%', sm: '320px' }}
         src={image}
         alt={`${name} ${title ? ' - ' + title : ''} - Shill Cares Foundation`}
       />
