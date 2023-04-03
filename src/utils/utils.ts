@@ -23,5 +23,5 @@ export function roundTo(num: number, decimalPlaces: number): number {
 }
 
 export function formatMillions(num: number): string {
-  return roundTo(num / 1000000, 1) + 'm';
+  return '$' + roundTo(num / 1000000, 1) + 'm';
 }
