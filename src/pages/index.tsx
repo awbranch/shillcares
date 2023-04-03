@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         >
           <HighlightCard
             orientation={'left'}
-            image={'/comps/gettyimages-1134241181-170667a.jpg'}
+            image={'/our-work.jpg'}
             label={'Find out more about our work'}
             link={'/work'}
           >
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
 
           <HighlightCard
             orientation={'left'}
-            image={'/comps/gettyimages-1431841394-170667a.jpg'}
+            image={'/contact-us.jpg'}
             label={'Please contact us'}
             link={'/contact'}
           >

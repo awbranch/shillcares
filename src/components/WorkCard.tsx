@@ -42,7 +42,7 @@ const WorkCard = ({
         <NextLink href={link} passHref>
           <Link
             underline={'hover'}
-          >{`Find out more about ${organization}`}</Link>
+          >{`Find out how you can help ${organization}`}</Link>
         </NextLink>
       </Box>
     </Box>

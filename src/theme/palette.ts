@@ -9,7 +9,7 @@ export const light = {
   mode: 'light' as PaletteMode,
   primary: {
     main: '#212427',
-    light: '#659eea',
+    light: '#EBF3F9',
     dark: '#0E5278',
     contrastText: '#fff',
   },

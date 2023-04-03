@@ -38,7 +38,7 @@ const Contact: NextPage = () => {
           component={LazyLoadImage}
           height={1}
           width={1}
-          src={'contact-side-2.jpg'}
+          src={'contact-side.jpg'}
           alt="Hearts"
           effect="blur"
           sx={{

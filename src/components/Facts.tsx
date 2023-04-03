@@ -5,18 +5,30 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 
 interface FactProps {
+  icon: string;
   value: string;
   label: string;
 }
 
-const Fact = ({ value, label }: FactProps): JSX.Element => (
-  <Stack direction="column" alignItems="center">
+const Fact = ({ icon, value, label }: FactProps): JSX.Element => (
+  <Stack
+    direction={{ xs: 'row', sm: 'column' }}
+    alignItems={{ xs: 'baseline', sm: 'center' }}
+    spacing={{ xs: 2, sm: 0 }}
+  >
+    <Box
+      component={'img'}
+      display={'block'}
+      src={icon}
+      width={{ xs: 33, sm: 45, md: 55 }}
+      height={{ xs: 33, sm: 45, md: 55 }}
+    />
+
     <Typography
       variant="h4"
       component="div"
       sx={{
-        fontSize: { xs: '3.0rem', sm: '4.25rem', md: '5.5rem' },
-        lineHeight: { xs: '4.0rem', sm: '5.25rem', md: '6.5rem' },
+        fontSize: { xs: '2.7rem', sm: '3.75rem', md: '4.75rem' },
       }}
     >
       {value}
@@ -24,7 +36,7 @@ const Fact = ({ value, label }: FactProps): JSX.Element => (
     <Typography
       variant="h4"
       component="div"
-      sx={{ fontSize: { xs: '0.9rem', md: '1.2rem' } }}
+      sx={{ fontSize: { xs: '1.3rem', md: '1.1rem' }, fontWeight: 400 }}
     >
       {label}
     </Typography>
@@ -42,13 +54,29 @@ const Facts = ({
   totalGranted,
   endowment,
 }: FactsProps): JSX.Element => (
-  <Box sx={{ backgroundColor: 'primary.dark' }}>
-    <Container sx={{ color: 'white' }}>
+  <Box sx={{ backgroundColor: 'primary.light', py: 3 }}>
+    <Container sx={{ color: 'primary.dark' }}>
       <Typography variant="h2">Foundation Facts</Typography>
-      <Stack direction="row" justifyContent="space-around" sx={{ mt: 1 }}>
-        <Fact value={grants} label={'Grants Awarded'} />
-        <Fact value={totalGranted} label={'Total Granted'} />
-        <Fact value={endowment} label={'Endowment'} />
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        justifyContent="space-around"
+        sx={{ mt: { xs: 3, sm: 6 }, ml: { xs: 1, sm: 0 } }}
+      >
+        <Fact
+          icon={'trophy-light.svg'}
+          value={grants}
+          label={'Grants Awarded'}
+        />
+        <Fact
+          icon={'hand-heart-light.svg'}
+          value={totalGranted}
+          label={'Total Granted'}
+        />
+        <Fact
+          icon={'piggy-bank-sharp-light.svg'}
+          value={endowment}
+          label={'Endowment'}
+        />
       </Stack>
     </Container>
   </Box>

@@ -7,17 +7,26 @@ import BioCard from 'components/BioCard';
 import Facts from 'components/Facts';
 import React from 'react';
 import Box from '@mui/material/Box';
-import { IBoard } from '../types/contentful';
+import { IGrant, IBoard, IEndowment } from 'types/contentful';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 import { GetStaticProps } from 'next';
+import { formatMillions } from 'utils/utils';
 
 interface Props {
+  grantsAwarded: string;
+  totalGranted: string;
+  endowment: string;
   boardMembers: IBoard[];
 }
 
-const About: NextPage = ({ boardMembers }: Props) => {
+const About: NextPage = ({
+  grantsAwarded,
+  totalGranted,
+  endowment,
+  boardMembers,
+}: Props) => {
   return (
     <Main>
       <Container>
@@ -32,7 +41,11 @@ const About: NextPage = ({ boardMembers }: Props) => {
         </Typography>
       </Container>
       <Box sx={{ mt: 3, mb: 6 }}>
-        <Facts grants="8" totalGranted="0.7m" endowment="5m" />
+        <Facts
+          grants={grantsAwarded}
+          totalGranted={totalGranted}
+          endowment={endowment}
+        />
       </Box>
       <Container>
         <Typography variant="h2">Governance</Typography>
@@ -69,16 +82,43 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const collection = await client.getEntries({
-    content_type: 'board',
-  });
+  const boardMembers = (
+    await client.getEntries({
+      content_type: 'board',
+      order: 'fields.order',
+    })
+  ).items as IBoard[];
 
-  const boardMembers = (collection.items as IBoard[]).sort(
-    (g1, g2) => g1.fields.order - g2.fields.order,
+  const grants = (
+    await client.getEntries({
+      content_type: 'grant',
+    })
+  ).items as IGrant[];
+
+  const deposits = (
+    await client.getEntries({
+      content_type: 'endowment',
+      order: '-fields.date',
+      limit: 1,
+    })
+  ).items as IEndowment[];
+
+  const grantsAwarded = grants.length.toString();
+  const totalGranted = formatMillions(
+    grants.reduce((r, g) => g.fields.amount + r, 0),
   );
 
+  const endowment = formatMillions(deposits[0].fields.balance);
+
+  console.log(endowment);
+
   return {
-    props: { boardMembers },
+    props: {
+      grantsAwarded,
+      totalGranted,
+      endowment,
+      boardMembers,
+    },
   };
 };
 

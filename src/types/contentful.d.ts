@@ -37,6 +37,69 @@ export interface IBoard extends Entry<IBoardFields> {
   };
 }
 
+export interface IEndowmentFields {
+  /** Balance */
+  balance: number;
+
+  /** Date */
+  date: string;
+
+  /** Note */
+  note?: string | undefined;
+}
+
+/** The ongoing balance of the endowment */
+
+export interface IEndowment extends Entry<IEndowmentFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'endowment';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
+export interface IGrantFields {
+  /** Date */
+  date: string;
+
+  /** Amount */
+  amount: number;
+
+  /** Grantee */
+  grantee: IGrantee;
+
+  /** Note */
+  note: string;
+}
+
+/** Amounts given to grantees */
+
+export interface IGrant extends Entry<IGrantFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: 'grant';
+        linkType: 'ContentType';
+        type: 'Link';
+      };
+    };
+  };
+}
+
 export interface IGranteeFields {
   /** Name */
   name: string;
@@ -71,9 +134,9 @@ export interface IGrantee extends Entry<IGranteeFields> {
   };
 }
 
-export type CONTENT_TYPE = 'board' | 'grantee';
+export type CONTENT_TYPE = 'board' | 'endowment' | 'grant' | 'grantee';
 
-export type IEntry = IBoard | IGrantee;
+export type IEntry = IBoard | IEndowment | IGrant | IGrantee;
 
 export type LOCALE_CODE = 'en-US';
 
