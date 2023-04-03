@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+import NextLink from 'next/link';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -7,6 +8,7 @@ import Main from 'layouts/main/Main';
 import Container from 'components/Container';
 import ContactForm from 'components/forms/ContactForm';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 const Contact: NextPage = () => {
   const theme = useTheme();
@@ -70,9 +72,20 @@ const Contact: NextPage = () => {
             <Container>
               <Box sx={{ pl: 2 }}>
                 <Typography variant={'h1'}>Contact Us</Typography>
-                <Typography variant="subtitle1" sx={{ mt: 3, mb: 6 }} paragraph>
+                <Typography variant="subtitle1" sx={{ mt: 3 }} paragraph>
                   We are interested to hear your ideas about new ways we can
                   help high-risk people and animals within our community.
+                </Typography>
+                <Typography variant="subtitle1" paragraph>
+                  If you&apos;re interested in applying for a grant, please fill
+                  out our{' '}
+                  <NextLink href={'/apply'} passHref>
+                    <Link>
+                      <Typography variant="subtitle1" component={'span'}>
+                        grant application form.
+                      </Typography>
+                    </Link>
+                  </NextLink>
                 </Typography>
                 <ContactForm />
               </Box>
