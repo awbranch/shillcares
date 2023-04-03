@@ -14,7 +14,7 @@ const Fact = ({ icon, value, label }: FactProps): JSX.Element => (
   <Stack
     direction={{ xs: 'row', sm: 'column' }}
     alignItems={{ xs: 'baseline', sm: 'center' }}
-    spacing={{ xs: 2, sm: 0 }}
+    spacing={{ xs: 1.7, sm: 0 }}
   >
     <Box
       component={'img'}
@@ -60,7 +60,8 @@ const Facts = ({
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         justifyContent="space-around"
-        sx={{ mt: { xs: 3, sm: 6 }, ml: { xs: 1, sm: 0 } }}
+        sx={{ mt: { xs: 4, sm: 6 }, ml: { xs: 1.5, sm: 0 } }}
+        spacing={{ xs: 2, sm: 0 }}
       >
         <Fact
           icon={'trophy-light.svg'}
