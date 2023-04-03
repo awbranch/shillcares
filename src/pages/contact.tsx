@@ -77,12 +77,11 @@ const Contact: NextPage = () => {
                   help high-risk people and animals within our community.
                 </Typography>
                 <Typography variant="subtitle1" paragraph>
-                  If you&apos;re interested in applying for a grant, please fill
-                  out our{' '}
+                  To apply for a grant please complete our{' '}
                   <NextLink href={'/apply'} passHref>
                     <Link>
                       <Typography variant="subtitle1" component={'span'}>
-                        grant application form.
+                        grant application.
                       </Typography>
                     </Link>
                   </NextLink>

@@ -2,7 +2,6 @@ import { useFormik } from 'formik';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import applicationSchema from 'utils/applicationFormSchema';
@@ -330,17 +329,15 @@ const ApplyForm = (): JSX.Element => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item container justifyContent={'center'} xs={12}>
-            <Stack direction="row" spacing={2}>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                type="submit"
-              >
-                Submit
-              </Button>
-            </Stack>
+          <Grid item container xs={12}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              type="submit"
+            >
+              Submit
+            </Button>
           </Grid>
         </Grid>
       </form>
