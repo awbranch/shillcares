@@ -6,15 +6,14 @@ import Stack from '@mui/material/Stack';
 import WorkCard from 'components/WorkCard';
 import { IGrantee } from '../types/contentful';
 import { createClient } from 'contentful';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import RichText from '../components/RichText';
+import React from 'react';
 
 interface Props {
   grantees: IGrantee[];
 }
 
 const Work: NextPage = ({ grantees }: Props) => {
-  console.log(grantees);
   return (
     <Main>
       <Container>
@@ -35,15 +34,7 @@ const Work: NextPage = ({ grantees }: Props) => {
                 <Typography variant="h3" component={'h2'} sx={{ mt: 0, mb: 1 }}>
                   {g.fields.name}
                 </Typography>
-                {documentToReactComponents(g.fields.description, {
-                  renderNode: {
-                    [BLOCKS.PARAGRAPH]: (node, children) => (
-                      <Typography variant="body1" paragraph>
-                        {children}
-                      </Typography>
-                    ),
-                  },
-                })}
+                <RichText document={g.fields.description} />
               </WorkCard>
             </div>
           ))}

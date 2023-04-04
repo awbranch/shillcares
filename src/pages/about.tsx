@@ -5,12 +5,11 @@ import Typography from '@mui/material/Typography';
 import Container from 'components/Container';
 import BioCard from 'components/BioCard';
 import Facts from 'components/Facts';
+import RichText from 'components/RichText';
 import React from 'react';
 import Box from '@mui/material/Box';
 import { IGrant, IBoard, IEndowment } from 'types/contentful';
 import { createClient } from 'contentful';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
 import { GetStaticProps } from 'next';
 import { formatMillions } from 'utils/utils';
 
@@ -58,15 +57,7 @@ const About: NextPage = ({
                 title={m.fields.title}
                 image={m.fields.image.fields.file.url}
               >
-                {documentToReactComponents(m.fields.biography, {
-                  renderNode: {
-                    [BLOCKS.PARAGRAPH]: (node, children) => (
-                      <Typography variant="body1" paragraph>
-                        {children}
-                      </Typography>
-                    ),
-                  },
-                })}
+                <RichText document={m.fields.biography} />
               </BioCard>
             </div>
           ))}
@@ -109,8 +100,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   );
 
   const endowment = formatMillions(deposits[0].fields.balance);
-
-  console.log(endowment);
 
   return {
     props: {
