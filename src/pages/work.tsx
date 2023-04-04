@@ -59,13 +59,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const collection = await client.getEntries({
-    content_type: 'grantee',
-  });
-
-  const grantees = (collection.items as IGrantee[]).sort(
-    (g1, g2) => g1.fields.order - g2.fields.order,
-  );
+  const grantees = (
+    await client.getEntries({
+      content_type: 'grantee',
+      order: 'fields.order',
+    })
+  ).items as IGrantee[];
 
   return {
     props: { grantees },
