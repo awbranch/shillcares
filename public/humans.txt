@@ -1,0 +1,1 @@
+This website was built by Andrew Branch and Michael Bielawski Branch in April 2023 using TypeScript, React, Next.js, and MUI.
