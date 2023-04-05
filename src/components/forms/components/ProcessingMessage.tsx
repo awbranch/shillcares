@@ -1,22 +1,20 @@
-import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import PropagateLoader from 'react-spinners/PropagateLoader';
+import BarLoader from 'react-spinners/BarLoader';
 
 const ProcessingMessage = (): JSX.Element => {
   const theme = useTheme();
-
   return (
-    <Box sx={{ textAlign: 'center' }}>
-      <PropagateLoader
-        color={theme.palette.primary.dark}
-        loading={true}
-        size={12}
-      />
+    <Box>
       <Typography variant="subtitle1" sx={{ pt: 4 }}>
         Submitting. Please Wait.
       </Typography>
+      <BarLoader
+        color={theme.palette.primary.dark}
+        width={220}
+        loading={true}
+      />
     </Box>
   );
 };
