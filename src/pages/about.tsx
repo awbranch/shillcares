@@ -32,7 +32,7 @@ const About: NextPage = ({
         <Typography variant="h1">About Us</Typography>
 
         <Typography variant="subtitle1" sx={{ mt: 3, mb: 2.5 }} paragraph>
-          The Molly and Ed Shill Cares foundation was founded in 2022 with a
+          The Molly and Ed Shill Cares Foundation was founded in 2022 with a
           goal to help people and animals within their community have a safer
           place to live and thrive. Their aim is to help end the cycle of
           violence, provide opportunities for success and inspire loving
