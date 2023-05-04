@@ -1,6 +1,7 @@
 import React from 'react';
 import { Page, Logo, Title, Text, Para } from './elements';
 import globals from 'utils/globals';
+import { ContactInfo } from 'types/contactInfo';
 
 interface Props {
   contactInfo: ContactInfo;

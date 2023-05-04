@@ -10,6 +10,7 @@ import {
   Header,
   Text,
 } from './elements';
+import { GrantApplication } from 'types/application';
 
 interface Props {
   application: GrantApplication;

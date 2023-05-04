@@ -1,4 +1,4 @@
-interface GrantApplication {
+export type GrantApplication = {
   accounting: string;
   organization: string;
   website: string;
@@ -22,4 +22,4 @@ interface GrantApplication {
   projectTotalCost: string;
   projectDates: string;
   projectArea: string;
-}
+};

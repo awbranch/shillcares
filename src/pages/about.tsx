@@ -8,16 +8,16 @@ import Facts from 'components/Facts';
 import RichText from 'components/RichText';
 import React from 'react';
 import Box from '@mui/material/Box';
-import { IGrant, IBoard, IEndowment } from 'types/contentful';
-import { createClient } from 'contentful';
 import { GetStaticProps } from 'next';
 import { formatMillions } from 'utils/utils';
+import { BoardMember } from 'types/boardMember';
+import { getBoardMembers, getEndowmentBalance, getGrants } from 'utils/sanity';
 
 interface Props {
   grantsAwarded: string;
   totalGranted: string;
   endowment: string;
-  boardMembers: IBoard[];
+  boardMembers: BoardMember[];
 }
 
 const About: NextPage = ({
@@ -51,13 +51,9 @@ const About: NextPage = ({
 
         <Stack direction={'column'} spacing={10} sx={{ pt: 4 }}>
           {boardMembers.map((m) => (
-            <div key={m.sys.id}>
-              <BioCard
-                name={m.fields.name}
-                title={m.fields.title}
-                image={m.fields.image.fields.file.url}
-              >
-                <RichText document={m.fields.biography} />
+            <div key={m._id}>
+              <BioCard name={m.name} title={m.title} image={m.image}>
+                <RichText document={m.biography} />
               </BioCard>
             </div>
           ))}
@@ -68,38 +64,14 @@ const About: NextPage = ({
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  const boardMembers = (
-    await client.getEntries({
-      content_type: 'board',
-      order: 'fields.order',
-    })
-  ).items as IBoard[];
-
-  const grants = (
-    await client.getEntries({
-      content_type: 'grant',
-    })
-  ).items as IGrant[];
-
-  const deposits = (
-    await client.getEntries({
-      content_type: 'endowment',
-      order: '-fields.date',
-      limit: 1,
-    })
-  ).items as IEndowment[];
+  const boardMembers = await getBoardMembers();
+  const grants = await getGrants();
+  const ebal = await getEndowmentBalance();
 
   const grantsAwarded = grants.length.toString();
-  const totalGranted = formatMillions(
-    grants.reduce((r, g) => g.fields.amount + r, 0),
-  );
+  const totalGranted = formatMillions(grants.reduce((r, g) => g.amount + r, 0));
 
-  const endowment = formatMillions(deposits[0].fields.balance);
+  const endowment = formatMillions(ebal.balance);
 
   return {
     props: {

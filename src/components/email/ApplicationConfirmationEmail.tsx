@@ -1,6 +1,7 @@
 import React from 'react';
 import { Page, Logo, Title, Text, Para } from './elements';
 import globals from 'utils/globals';
+import { GrantApplication } from 'types/application';
 
 interface Props {
   application: GrantApplication;

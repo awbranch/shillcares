@@ -10,6 +10,7 @@ import {
   Header,
   Text,
 } from './elements';
+import { ContactInfo } from 'types/contactInfo';
 
 interface Props {
   contactInfo: ContactInfo;
