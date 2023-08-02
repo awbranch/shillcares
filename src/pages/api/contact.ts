@@ -6,7 +6,7 @@ import MessageConfirmationEmail from 'components/email/MessageConfirmationEmail'
 import contactFormSchema from 'utils/contactFormSchema';
 import path from 'path';
 
-const emailOptions = {
+const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.SMTP_USER,
@@ -14,9 +14,7 @@ const emailOptions = {
   },
   logger: true,
   debug: true,
-};
-
-const transporter = nodemailer.createTransport(emailOptions);
+});
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {
