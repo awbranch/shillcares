@@ -65,9 +65,17 @@ const handler = async (req, res) => {
       );
 
       // Send confirmation email to the submitter
+      const toList: string[] = [];
+      if (application.contactEmail) {
+        toList.push(application.contactEmail);
+      }
+      if (application.directorEmail) {
+        toList.push(application.directorEmail);
+      }
+
       status = await transporter.sendMail({
         from: process.env.EMAIL_FROM,
-        to: application.contactEmail || application.directorEmail,
+        to: toList.join(','),
         subject: 'Molly & Ed Shill Cares - Grant Application Received',
         html: ReactDOMServer.renderToString(
           React.createElement(ApplicationConfirmationEmail, {
