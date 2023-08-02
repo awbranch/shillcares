@@ -13,6 +13,10 @@ const Menu = [
     href: '/',
   },
   {
+    name: 'News',
+    href: '/news',
+  },
+  {
     name: 'Our Work',
     href: '/work',
   },

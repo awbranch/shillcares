@@ -37,6 +37,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }: Props): JSX.Element => {
         spacing={4}
         sx={{ display: { xs: 'none', md: 'flex' } }}
       >
+        <NavItem title="News" link="/news" colorInvert={colorInvert} />
         <NavItem title="Our Work" link="/work" colorInvert={colorInvert} />
         <NavItem title="About Us" link="/about" colorInvert={colorInvert} />
         <NavItem title="Contact Us" link="/contact" colorInvert={colorInvert} />

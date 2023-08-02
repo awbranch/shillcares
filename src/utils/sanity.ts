@@ -3,6 +3,7 @@ import { Grantee } from 'types/grantee';
 import { Grant } from 'types/grant';
 import { BoardMember } from 'types/boardMember';
 import { Endowment } from 'types/endowment';
+import { Story } from 'types/story';
 
 export const client = createClient({
   projectId: '5gu47m8q',
@@ -56,5 +57,19 @@ export async function getEndowmentBalance(): Promise<Endowment> {
        date,
        note
     } | order(date desc)[0]`,
+  );
+}
+
+export async function getStories(): Promise<Story[]> {
+  return client.fetch(
+    `*[_type == "story"]{
+       _id,
+       title,
+       location,
+       date,
+       "image": image.asset->url,
+       text,
+       "slug": slug.current,
+    } | order(date desc)`,
   );
 }
