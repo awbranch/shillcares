@@ -36,6 +36,8 @@ const applicationSchema = yup.object({
   projectDates: yup.string().trim().required(required),
   projectArea: yup.string().trim().required(required),
   projectGoals: yup.string().trim().required(required),
+
+  source: yup.string().trim().required(required),
 });
 
 export default applicationSchema;

@@ -5,6 +5,7 @@ import MessageSubmittedEmail from 'components/email/MessageSubmittedEmail';
 import MessageConfirmationEmail from 'components/email/MessageConfirmationEmail';
 import contactFormSchema from 'utils/contactFormSchema';
 import path from 'path';
+import twilio from 'twilio';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -15,6 +16,11 @@ const transporter = nodemailer.createTransport({
   logger: true,
   debug: true,
 });
+
+const smsClient = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN,
+);
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {
@@ -63,6 +69,26 @@ const handler = async (req, res) => {
           status.accepted,
         )} rejected: ${JSON.stringify(status.rejected)}`,
       );
+
+      // Send SMS text messages to the foundation
+      const numbers = process.env.TWILIO_TO_PHONE.split(/\s*,\s*/);
+      for (let number of numbers) {
+        const smsResponse = await smsClient.messages.create({
+          body: `ShillCares Message Received\nFrom: ${contactInfo.name} - ${contactInfo.email}\n${contactInfo.message}`,
+          from: process.env.TWILIO_FROM_PHONE,
+          to: number,
+        });
+
+        console.log(`Twilio Response to ${number}: ${smsResponse.sid}`);
+        console.debug(
+          `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
+        );
+
+        console.log(`Twilio Response: ${smsResponse.sid}`);
+        console.debug(
+          `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
+        );
+      }
 
       // Send confirmation email to the submitter
       status = await transporter.sendMail({

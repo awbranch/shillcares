@@ -36,6 +36,7 @@ const ApplyForm = (): JSX.Element => {
     projectTotalCost: '',
     projectDates: '',
     projectArea: '',
+    source: '',
   };
 
   const formik = useFormik({
@@ -315,6 +316,29 @@ const ApplyForm = (): JSX.Element => {
               size="medium"
               fullWidth
               {...getFieldProps('projectArea', formik)}
+            />
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Typography variant={'h2'} sx={{ pt: 10, pb: 3 }}>
+              Other
+            </Typography>
+            <Typography variant={'body2'} paragraph>
+              Please tell us how you heard about our foundation.
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              label="Source *"
+              multiline
+              rows={3}
+              variant="outlined"
+              color="primary"
+              size="medium"
+              fullWidth
+              {...getFieldProps('source', formik)}
             />
           </Grid>
           <Grid item container justifyContent={'left'} xs={12}>

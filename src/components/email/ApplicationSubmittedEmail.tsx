@@ -111,6 +111,12 @@ const ApplicationSubmittedEmail = ({
             <Text>{application.projectArea}</Text>
           </Cell>
         </Row>
+        <Row>
+          <DoubleCell>
+            <Header>Source</Header>
+            <Text>{application.source}</Text>
+          </DoubleCell>
+        </Row>
       </Table>
     </Page>
   );

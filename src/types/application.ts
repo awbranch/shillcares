@@ -22,4 +22,5 @@ export type GrantApplication = {
   projectTotalCost: string;
   projectDates: string;
   projectArea: string;
+  source: string;
 };
