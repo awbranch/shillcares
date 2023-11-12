@@ -21,7 +21,7 @@ const NavItem = ({ title, link, colorInvert }: Props): JSX.Element => {
 
   return (
     <Box>
-      <NextLink href={link} passHref>
+      <NextLink href={link} passHref prefetch={false}>
         <Link
           underline={hasActiveLink ? 'always' : 'hover'}
           component="a"

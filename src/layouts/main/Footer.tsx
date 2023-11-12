@@ -17,7 +17,7 @@ const Footer = (): JSX.Element => {
           textAlign: 'center',
         }}
       >
-        <NextLink href={'/'} passHref>
+        <NextLink href={'/'} passHref prefetch={false}>
           <Box component={'a'}>
             <Box
               component={'img'}

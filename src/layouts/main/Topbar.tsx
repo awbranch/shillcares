@@ -21,7 +21,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }: Props): JSX.Element => {
       alignItems={'center'}
       width={1}
     >
-      <NextLink href="/" passHref>
+      <NextLink href="/" passHref prefetch={false}>
         <Box
           display={'flex'}
           component="a"
