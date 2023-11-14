@@ -1,6 +1,6 @@
 const globals = {
   APPLICATION_RECEIVED:
-    "Thank you for submitting a grant application to the Molly and Ed Shill Cares Foundation. Your application will be reviewed and evaluated for alignment with the foundation's mission and funding levels for the current year. If you grant is selected as a candidate, the foundation  will contact you at the email address provided for next steps.",
+    "Thank you for submitting a grant application to the Molly and Ed Shill Cares Foundation. Your application will be reviewed and evaluated for alignment with the foundation's mission and funding levels for the current year. If your grant is selected as a candidate, the foundation  will contact you at the email address provided for next steps.",
   MESSAGE_RECEIVED:
     'Thank you for contacting the Molly and Ed Shill Cares Foundation. We will get back to you as soon as possible.',
   FOUNDATION_DISCLAIMER:
