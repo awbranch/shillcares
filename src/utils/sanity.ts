@@ -68,6 +68,7 @@ export async function getStories(): Promise<Story[]> {
        location,
        date,
        "image": image.asset->url,
+       imageUrl,
        text,
        "slug": slug.current,
     } | order(date desc)`,

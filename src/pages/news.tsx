@@ -9,6 +9,8 @@ import RichText from 'components/RichText';
 import React from 'react';
 import { Story } from 'types/story';
 import { getStories } from 'utils/sanity';
+import Link from '@mui/material/Link';
+import NextLink from 'next/link';
 
 interface Props {
   stories: Story[];
@@ -31,13 +33,28 @@ const News: NextPage = ({ stories }: Props) => {
               <Typography variant="body1">
                 {s.location} - {new Date(s.date).toDateString()}
               </Typography>
-              <Box
-                component={'img'}
-                sx={{ my: 1 }}
-                width={{ xs: '100%' }}
-                src={s.image}
-                alt={s.title}
-              />
+              {s.imageUrl ? (
+                <NextLink href={s.imageUrl} passHref>
+                  <Link>
+                    <Box
+                      component={'img'}
+                      sx={{ my: 1 }}
+                      width={{ xs: '100%' }}
+                      src={s.image}
+                      alt={s.title}
+                    />
+                  </Link>
+                </NextLink>
+              ) : (
+                <Box
+                  component={'img'}
+                  sx={{ my: 1 }}
+                  width={{ xs: '100%' }}
+                  src={s.image}
+                  alt={s.title}
+                />
+              )}
+
               <RichText document={s.text} />
             </Box>
           ))}

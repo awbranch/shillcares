@@ -6,6 +6,7 @@ export type Story = {
   location: string;
   date: string;
   image: string;
+  imageUrl: string;
   text: PortableTextBlock[];
   slug: string;
 };
