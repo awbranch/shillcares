@@ -8,6 +8,7 @@ import Facts from 'components/Facts';
 import RichText from 'components/RichText';
 import React from 'react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import { GetStaticProps } from 'next';
 import { formatMillions } from 'utils/utils';
 import { BoardMember } from 'types/boardMember';
@@ -39,7 +40,7 @@ const About: NextPage = ({
           outcomes within their communities.
         </Typography>
       </Container>
-      <Box sx={{ mt: 3, mb: 6 }}>
+      <Box id="facts" sx={{ mt: 3, mb: 6 }}>
         <Facts
           grants={grantsAwarded}
           totalGranted={totalGranted}
@@ -47,7 +48,9 @@ const About: NextPage = ({
         />
       </Box>
       <Container>
-        <Typography variant="h2">Governance</Typography>
+        <Typography variant="h2" id="governance">
+          Governance
+        </Typography>
 
         <Stack direction={'column'} spacing={10} sx={{ pt: 4 }}>
           {boardMembers.map((m) => (
@@ -58,6 +61,27 @@ const About: NextPage = ({
             </div>
           ))}
         </Stack>
+      </Container>
+      <Container sx={{ mb: 10 }}>
+        <Typography variant="h2" id="logos">
+          Logos
+        </Typography>
+        <Typography variant="body1" sx={{ mt: 3, mb: 2.5 }} paragraph>
+          Download the Molly and Ed Shill Cares Foundation logos and logo style
+          guide for both print and web usage.
+        </Typography>
+
+        <Button
+          target="_blank"
+          href="/shill-cares-logos.zip"
+          variant="contained"
+          component="a"
+          color="primary"
+          size="large"
+          type="submit"
+        >
+          Download Logos Zip
+        </Button>
       </Container>
     </Main>
   );
