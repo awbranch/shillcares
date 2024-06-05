@@ -6,6 +6,7 @@ import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmati
 import applicationSchema from 'utils/applicationFormSchema';
 import path from 'path';
 import twilio from 'twilio';
+import { truncateTo } from 'utils/utils';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -72,9 +73,24 @@ const handler = async (req, res) => {
 
       // Send SMS text messages to the foundation
       const numbers = process.env.TWILIO_TO_PHONE.split(/\s*,\s*/);
+
+      // Ensure the message is less than 1600 chars
+      const smsMessage = `ShillCares Grant Application Received\n${truncateTo(
+        application.organization,
+        100,
+        true,
+      )} asking for ${truncateTo(
+        application.projectRequestedAmount,
+        50,
+        true,
+      )} for "${truncateTo(
+        application.projectName,
+        100,
+        true,
+      )}"\nCheck email for full application details.`;
       for (let number of numbers) {
         const smsResponse = await smsClient.messages.create({
-          body: `ShillCares Grant Application Received\n${application.organization} asking for ${application.projectRequestedAmount} for "${application.projectName}"\nCheck email for full application details.`,
+          body: truncateTo(smsMessage, 1600),
           from: process.env.TWILIO_FROM_PHONE,
           to: number,
         });

@@ -25,3 +25,11 @@ export function roundTo(num: number, decimalPlaces: number): number {
 export function formatMillions(num: number): string {
   return '$' + roundTo(num / 1000000, 1) + 'm';
 }
+
+export function truncateTo(
+  str: string,
+  max: number,
+  ellipsis?: boolean,
+): string {
+  return str.length > max ? str.slice(0, max) + (!!ellipsis ? '...' : '') : str;
+}
