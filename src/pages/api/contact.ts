@@ -98,7 +98,7 @@ const handler = async (req, res) => {
         );
       }
 
-      // Send confirmation email to the submitter  
+      // Send confirmation email to the submitter
       status = await transporter.sendMail({
         from: process.env.EMAIL_FROM,
         to: contactInfo.email,
