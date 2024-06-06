@@ -99,11 +99,6 @@ const handler = async (req, res) => {
         console.debug(
           `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
         );
-
-        console.log(`Twilio Response: ${smsResponse.sid}`);
-        console.debug(
-          `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
-        );
       }
 
       // Send confirmation email to the submitter

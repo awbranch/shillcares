@@ -96,14 +96,9 @@ const handler = async (req, res) => {
         console.debug(
           `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
         );
-
-        console.log(`Twilio Response: ${smsResponse.sid}`);
-        console.debug(
-          `Twilio Response Details\n${JSON.stringify(smsResponse, null, 3)}`,
-        );
       }
 
-      // Send confirmation email to the submitter
+      // Send confirmation email to the submitter  
       status = await transporter.sendMail({
         from: process.env.EMAIL_FROM,
         to: contactInfo.email,
