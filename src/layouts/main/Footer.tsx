@@ -1,6 +1,11 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import NextLink from 'next/link';
+import Link from '@mui/material/Link';
+
+const startYear = 2022;
+const currentYear = new Date().getFullYear();
 
 const Footer = (): JSX.Element => {
   return (
@@ -26,6 +31,44 @@ const Footer = (): JSX.Element => {
             />
           </Box>
         </NextLink>
+
+        <Box
+          sx={{
+            color: 'alternate.main',
+            mt: 2,
+            pb: 4,
+            textTransform: 'uppercase',
+          }}
+        >
+          <Typography
+            variant="caption"
+            sx={{ fontSize: '0.7rem', display: 'block' }}
+            paragraph={false}
+          >
+            Website by:{' '}
+            <NextLink href={'https://branchstudio.io'} passHref>
+              <Link
+                color="inherit"
+                underline="hover"
+                target="_blank"
+                sx={{
+                  fontFamily: 'inherit',
+                  fontWeight: 'inherit',
+                  fontSize: 'inherit',
+                }}
+              >
+                Branch Software Studio
+              </Link>
+            </NextLink>
+          </Typography>
+          <Typography
+            variant="caption"
+            sx={{ fontSize: '0.53rem', display: 'block' }}
+            paragraph={false}
+          >
+            © {startYear}-{currentYear} Molly & Ed Shill Cares Foundation
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

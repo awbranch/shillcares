@@ -1,1 +1,2 @@
-This website was built by Andrew Branch and Michael Bielawski Branch in April 2023 using TypeScript, React, Next.js, and MUI.
+This website was built by Branch Software Studio: https://branchstudio.io/
+Special thanks to Michael Bielawski Branch for all his help.
