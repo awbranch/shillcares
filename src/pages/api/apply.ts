@@ -1,22 +1,12 @@
-import nodemailer from 'nodemailer';
 import React from 'react';
-import * as ReactDOMServer from 'react-dom/server';
 import ApplicationSubmittedEmail from 'components/email/ApplicationSubmittedEmail';
 import ApplicationConfirmationEmail from 'components/email/ApplicationConfirmationEmail';
 import applicationSchema from 'utils/applicationFormSchema';
-import path from 'path';
+import { Resend } from 'resend';
 import twilio from 'twilio';
 import { truncateTo } from 'utils/utils';
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-  logger: true,
-  debug: true,
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const smsClient = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -39,37 +29,22 @@ const handler = async (req, res) => {
       }
 
       console.log(JSON.stringify(application, null, 3));
-      let logoId = 'email-header@shillcares.org';
-      let logoPath = path.resolve('./public');
 
       // Send an email to the foundation
-      let status = await transporter.sendMail({
+      let status = await resend.emails.send({
         from: process.env.EMAIL_FROM,
         to: process.env.EMAIL_TO,
         subject: 'Shill Cares Grant Application',
-        html: ReactDOMServer.renderToString(
-          React.createElement(ApplicationSubmittedEmail, {
-            application,
-            logoPath: `cid:${logoId}`,
-            submitted: new Date().toLocaleDateString(),
-          }),
-        ),
-        attachments: [
-          {
-            filename: 'email-header.png',
-            path: `${logoPath}/email-header.png`,
-            cid: logoId,
-          },
-        ],
+        react: React.createElement(ApplicationSubmittedEmail, {
+          application,
+          submitted: new Date().toLocaleDateString(),
+        }),
       });
 
-      console.log(
-        `Application submitted email response: ${status.response} id: ${
-          status.messageId
-        } accepted: ${JSON.stringify(
-          status.accepted,
-        )} rejected: ${JSON.stringify(status.rejected)}`,
-      );
+      if (status.error) {
+        console.error('Resend Error Sending to Foundation', status.error);
+        throw new Error(status.error?.message);
+      }
 
       // Send SMS text messages to the foundation
       const numbers = process.env.TWILIO_TO_PHONE.split(/\s*,\s*/);
@@ -110,33 +85,20 @@ const handler = async (req, res) => {
         toList.push(application.directorEmail);
       }
 
-      status = await transporter.sendMail({
+      status = await resend.emails.send({
         from: process.env.EMAIL_FROM,
-        to: toList.join(','),
+        to: toList,
         subject: 'Molly & Ed Shill Cares - Grant Application Received',
-        html: ReactDOMServer.renderToString(
-          React.createElement(ApplicationConfirmationEmail, {
-            application,
-            logoPath: `cid:${logoId}`,
-            submitted: new Date().toLocaleDateString(),
-          }),
-        ),
-        attachments: [
-          {
-            filename: 'email-header.png',
-            path: `${logoPath}/email-header.png`,
-            cid: logoId,
-          },
-        ],
+        react: React.createElement(ApplicationConfirmationEmail, {
+          application,
+          submitted: new Date().toLocaleDateString(),
+        }),
       });
 
-      console.log(
-        `Application confirmation email response: ${status.response} id: ${
-          status.messageId
-        } accepted: ${JSON.stringify(
-          status.accepted,
-        )} rejected: ${JSON.stringify(status.rejected)}`,
-      );
+      if (status.error) {
+        console.error('Resend Error Sending to Submitter', status.error);
+        throw new Error(status.error?.message);
+      }
 
       res.status(200).json({ message: 'Application Submitted Successfully' });
     } catch (error) {

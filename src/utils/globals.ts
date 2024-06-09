@@ -7,4 +7,6 @@ const globals = {
     'The MOLLY & ED SHILL CARES FOUNDATION (the “Foundation”) is a nonprofit organization organized exclusively for charitable, religious, scientific, literary, or educational purposes, to foster national or international amateur sports competition, or for the prevention of cruelty to children or animals, in each case, as described in Section 501(c)(3) of the Internal Revenue Code of 1986, as amended, or the corresponding provision of any subsequent federal tax laws (the “Code”), including, for such purposes, the making of distributions to organizations that qualify as exempt organizations under Section 501(c)(3) of the Code.',
 };
 
+export const BASE_URL = 'https://www.shillcares.org';
+
 export default globals;

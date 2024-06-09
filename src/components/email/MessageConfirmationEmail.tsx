@@ -5,18 +5,16 @@ import { ContactInfo } from 'types/contactInfo';
 
 interface Props {
   contactInfo: ContactInfo;
-  logoPath: string;
   submitted: string;
 }
 
 const MessageConfirmationEmail = ({
   contactInfo,
-  logoPath,
   submitted,
 }: Props): JSX.Element => {
   return (
     <Page>
-      <Logo path={logoPath} />
+      <Logo />
       <Title>Message Received</Title>
       <Text>{submitted}</Text>
       <Text>{contactInfo.name}</Text>

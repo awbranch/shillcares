@@ -1,4 +1,5 @@
 import React from 'react';
+import { BASE_URL } from 'utils/globals';
 
 interface ElementProps {
   children: React.ReactNode;
@@ -20,19 +21,19 @@ export const Page = ({ children }: ElementProps): JSX.Element => {
   );
 };
 
-interface LogoProps {
-  path: string;
-}
-
-export const Logo = ({ path }: LogoProps): JSX.Element => {
+export const Logo = (): JSX.Element => {
   return (
     <div
       style={{
         textAlign: 'center',
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={path} width={200} alt="Shill Foundation Logo" />
+      <img
+        src={`${BASE_URL}/email-header.png`}
+        width={200}
+        height={152}
+        alt="Shill Cares Foundation Logo"
+      />
     </div>
   );
 };

@@ -5,18 +5,16 @@ import { GrantApplication } from 'types/application';
 
 interface Props {
   application: GrantApplication;
-  logoPath: string;
   submitted: string;
 }
 
 const ApplicationConfirmationEmail = ({
   application,
-  logoPath,
   submitted,
 }: Props): JSX.Element => {
   return (
     <Page>
-      <Logo path={logoPath} />
+      <Logo />
       <Title>Grant Application Received</Title>
       <Text>{submitted}</Text>
       <Text>{application.organization}</Text>

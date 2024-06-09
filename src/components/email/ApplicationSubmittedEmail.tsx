@@ -14,18 +14,16 @@ import { GrantApplication } from 'types/application';
 
 interface Props {
   application: GrantApplication;
-  logoPath: string;
   submitted: string;
 }
 
 const ApplicationSubmittedEmail = ({
   application,
-  logoPath,
   submitted,
 }: Props): JSX.Element => {
   return (
     <Page>
-      <Logo path={logoPath} />
+      <Logo />
       <Title>{application.projectName}</Title>
       <Text>Submitted: {submitted.toLocaleString()}</Text>
 

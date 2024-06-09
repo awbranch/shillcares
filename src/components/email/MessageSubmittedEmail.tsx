@@ -14,18 +14,16 @@ import { ContactInfo } from 'types/contactInfo';
 
 interface Props {
   contactInfo: ContactInfo;
-  logoPath: string;
   submitted: string;
 }
 
 const MessageSubmittedEmail = ({
   contactInfo,
-  logoPath,
   submitted,
 }: Props): JSX.Element => {
   return (
     <Page>
-      <Logo path={logoPath} />
+      <Logo />
       <Title>Shill Cares Message</Title>
       <Text>Submitted: {submitted.toLocaleString()}</Text>
 
