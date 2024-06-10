@@ -28,6 +28,7 @@ export const Logo = (): JSX.Element => {
         textAlign: 'center',
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${BASE_URL}/email-header.png`}
         width={200}

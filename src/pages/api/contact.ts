@@ -46,7 +46,6 @@ const handler = async (req, res) => {
         throw new Error(status.error?.message);
       }
 
-
       // Send SMS text messages to the foundation
       const numbers = process.env.TWILIO_TO_PHONE.split(/\s*,\s*/);
 
@@ -89,8 +88,6 @@ const handler = async (req, res) => {
         console.error('Resend Error Sending to Submitter', status.error);
         throw new Error(status.error?.message);
       }
-
-
       res.status(200).json({ message: 'Message Sent Successfully' });
     } catch (error) {
       console.error(error);
