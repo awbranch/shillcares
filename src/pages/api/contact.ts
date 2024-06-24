@@ -33,7 +33,7 @@ const handler = async (req, res) => {
       // Send an email to the foundation
       let status = await resend.emails.send({
         from: process.env.EMAIL_FROM,
-        to: process.env.EMAIL_TO,
+        to: process.env.EMAIL_TO.split(','),
         subject: 'Shill Cares Contact Us Message',
         react: React.createElement(MessageSubmittedEmail, {
           contactInfo,
