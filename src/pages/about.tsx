@@ -40,13 +40,13 @@ const About: NextPage = ({
           outcomes within their communities.
         </Typography>
       </Container>
-      <Box id="facts" sx={{ mt: 3, mb: 6 }}>
+      {/* <Box id="facts" sx={{ mt: 3, mb: 6 }}>
         <Facts
           grants={grantsAwarded}
           totalGranted={totalGranted}
           endowment={endowment}
         />
-      </Box>
+      </Box> */}
       <Container>
         <Typography variant="h2" id="governance">
           Governance
